@@ -1376,3 +1376,316 @@
 // Привіт, Дмитро!
 // Привіт, Олена!
 // Привіт, Максим!
+
+// ! цикл
+// function fillArray(min, max) {
+//   let arr = [];
+//   for (let i = min; i <= max; i += 2) {
+//     return arr.push(i);
+//   }
+// }
+
+// console.log(fillArray(2, 10));
+
+// ? find
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Tell-Tale Heart",
+//     author: "Edgar Allan Poe",
+//     rating: 7.75,
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     rating: 7.94,
+//   },
+// ];
+// const BOOK_TITLE = "The Tell-Tale Heart";
+// const AUTHOR = "Robert Sheckley";
+
+// const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+
+// const bookByAuthor = books.find((book) => book.author === AUTHOR);
+
+// ? REDUCE
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+//   player.playtime / player.gamesPlayed;
+
+//   return total + player.playtime / player.gamesPlayed;
+// }, 0);
+
+// ? Ланчюг
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Tell-Tale Heart",
+//     author: "Edgar Allan Poe",
+//     rating: 7.75,
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     rating: 7.94,
+//   },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter((book) => book.rating > MIN_BOOK_RATING)
+//   .map((book) => book.author)
+//   .toSorted((a, b) => a.localeCompare(b));
+
+// ! Виведи кожне число в консоль за допомогою forEach().
+// const numbers = [1, 2, 3, 4, 5];
+
+// numbers.forEach(function (num) {
+//   console.log(num);
+// });
+
+// ! Виведи фразу:
+// Hello, Anna!, Hello, Dmytro!, Hello, Oleh! — для кожного елемента.
+
+// const names = ["Anna", "Dmytro", "Oleh"];
+
+// names.forEach(function (name) {
+//   console.log(`Hello, ${name}`);
+// });
+
+//!	Є масив чисел:
+// 🔹 Виведи кожне число поділене на 10.
+
+// const nums = [10, 20, 30];
+
+// nums.forEach(function (num) {
+//   let result = num / 10;
+//   console.log(result);
+// });
+
+//! Рівень 2 — трохи складніше
+// Для кожної ціни виведи у консоль ціну зі знижкою 10%.
+// (тобто ціна * 0.9)
+
+// const prices = [100, 200, 300];
+
+// prices.forEach(function (price) {
+//   let result = price * 0.9;
+//   console.log(result);
+// });
+
+// !Порахуйте загальну кількість символів у всіх словах.
+// (Підказка: створити змінну total = 0 і додавати word.length у кожній ітерації.)
+
+// const words = ["JS", "forEach", "loop"];
+// let total = 0;
+
+// words.forEach(function (word) {
+//   total += word.length;
+// });
+// console.log(total);
+
+// ! Рівень 3 — з об’єктами Є масив об’єктів:
+// Виведи у консоль імена всіх користувачів.
+
+// const users = [
+//   { name: "Anna", age: 20 },
+//   { name: "Dmytro", age: 25 },
+//   { name: "Oleh", age: 30 },
+// ];
+
+// users.forEach(function (user) {
+//   console.log(user.name);
+// });
+
+// ! Рівень 4 — творчі 🔹 Знайди середній бал за допомогою forEach.
+
+// const grades = [60, 80, 100, 90, 75];
+
+// let result = 0;
+
+// grades.forEach(function (grade) {
+//   result += grade;
+// });
+// console.log(result);
+
+// ! Створи новий масив result, у який додай кожен елемент у верхньому регістрі (APPLE, BANANA, …) — використовуючи forEach.
+
+// const products = ["apple", "banana", "kiwi"];
+
+// let result = [];
+
+// products.forEach(function (product) {
+//   result.push(product.toUpperCase());
+// });
+
+// console.log(result);
+
+// ! Стрілкові
+// Рівень 1 — базові
+
+// ? // 	1.	Проста функція без параметрів
+// 🔹 Створи стрілкову функцію sayHello, яка виводить у консоль "Hello!".
+
+// const sayHello = () => {
+//   console.log("Hello!");
+// };
+
+// sayHello();
+
+// ?	2.	Функція з одним параметром
+// 🔹 Створи функцію greet, яка приймає ім’я і виводить "Hello, [ім’я]!".
+
+// const a = "Dima";
+
+// const greet = (a) => {
+//   console.log(`Hello ${a}`);
+// };
+// greet(a);
+
+// ? 	3.	Функція з одним параметром і короткий синтаксис
+// 🔹 Створи функцію double, яка повертає число, помножене на 2.
+
+// const double = (num) => {
+//   return num * 2;
+// };
+
+// console.log(double(6));
+
+// ! Рівень 2 — трохи складніше
+// 	Функція з двома параметрами
+// Створи функцію sum, яка повертає суму двох чисел.
+
+// const sum = (a, b) => {
+//   return a + b;
+// };
+
+// console.log(sum(6, 6));
+
+// !	5.	Масив і стрілкова функція
+// Створи новий масив, де кожне число помножене на 3, використовуючи map зі стрілковою функцією.
+
+// const numbers = [1, 2, 3, 4];
+
+// const result = numbers.map((num) => {
+//   return num * 3;
+// });
+
+// console.log(result);
+
+// ! Рівень 3 — об’єкти
+// Створи новий масив, який містить тільки користувачів старше 21 року, використовуючи filter та стрілкову функцію.
+
+// const users = [
+//   { name: "Anna", age: 20 },
+//   { name: "Dmytro", age: 25 },
+//   { name: "Oleh", age: 30 },
+// ];
+
+// const user = users.filter((user) => {
+//   return user.age > 21;
+// });
+
+// console.log(user);
+
+// !	7.	Масив об’єктів + map
+// Створи новий масив тільки з імен користувачів, використовуючи map та стрілкову функцію.
+// const users = [
+//   { name: "Anna", age: 20 },
+//   { name: "Dmytro", age: 25 },
+//   { name: "Oleh", age: 30 },
+// ];
+
+// const nameUser = users.map((username) => {
+//   return username.name;
+// });
+
+// console.log(nameUser);
+
+//! Підрахунок сум за умовою!
+// Використай стрілкову функцію з forEach або reduce, щоб знайти середній бал.
+
+// const grades = [60, 80, 100, 90, 75];
+
+// const averGrade = grades.reduce((accum, bal) => {
+//   return (accum += bal / grades.length);
+// }, 0);
+
+// console.log(averGrade);
+
+// ! Комбінація методів
+//  Створи новий масив, де всі назви у верхньому регістрі та довжина кожного слова більша за 4 символи.
+
+// const products = ["apple", "banana", "kiwi"];
+
+// const newProduct = products.map((prod) => {
+//   return prod.toUpperCase();
+// });
+
+// console.log(newProduct);
+
+//! Підрахунок годин в неділю пн-чт
+
+//? --------- Лічильник LMS
+const totalHours = 18;
+
+//? --------- Вся неділя
+const calendar = [
+  { name: "monday", hours: 24 },
+  { name: "tuesday", hours: 24 },
+  { name: "wednesday", hours: 24 },
+  { name: "thursday", hours: 24 },
+  { name: "friday", hours: 24 },
+  { name: "saturday", hours: 24 },
+  { name: "sunday", hours: 24 },
+];
+
+let resultatHoursAllWeek = 0;
+const dimaWork = calendar.map((calc) => {
+  resultatHoursAllWeek += calc.hours;
+});
+console.log(resultatHoursAllWeek);
+
+//? --------- Зріз годин понеділок - четверг
+
+const MonToThur = calendar
+  .slice(0, 4) // бере перші 4 елементи: monday, tuesday, wednesday, thursday
+  .reduce((sum, day) => sum + day.hours, 0); // підсумовує їхні години
+console.log(MonToThur); // 96
+
+//? --------- Скільки провчився з пн по чт
+
+const average = MonToThur / totalHours;
+console.log(average);
