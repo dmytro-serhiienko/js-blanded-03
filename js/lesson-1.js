@@ -1689,3 +1689,8 @@ console.log(MonToThur); // 96
 
 const average = MonToThur / totalHours;
 console.log(average);
+
+const arr = [1, 2, 3];
+for (const el of arr) {
+  console.log(el);
+}
