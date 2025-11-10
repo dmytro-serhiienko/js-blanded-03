@@ -1656,41 +1656,267 @@
 
 // console.log(newProduct);
 
+//!!!!!!!!!!!!!!!!! Ось різноманітні задачі з JavaScript на різні теми:
+//? Масиви
+// Задача: Напиши функцію, яка знаходить найбільше число в масиві.
+// javascriptfindMax([3, 7, 2, 9, 1]); // 9
+const arr = [3, 7, 2, 9, 1];
+//* variant 1
+// const total = Math.max(...arr);
+// console.log("🚀 ~ total:", total);
+//* variant 2
+// const bigNum = arr.reduce((accum, num) => (num > accum ? num : accum), 0);
+// console.log("🚀 ~ bigNum:", bigNum);
+
+//? 2. Об'єкти
+// Задача: Створи функцію, яка приймає масив об'єктів (користувачів) і повертає масив тільки їх імен.
+// javascriptgetNames([{name: 'Олег', age: 20}, {name: 'Марія', age: 25}]);
+// const names = [
+//   { name: "Олег", age: 20 },
+//   { name: "Марія", age: 25 },
+// ];
+// const users = names.map((nombre) => nombre.name);
+// console.log("🚀 ~ users:", users);
+
+//? 3. Рядки (Strings)
+// Задача: Напиши функцію, яка перевіряє чи є слово паліндромом (читається однаково в обидва боки).
+
+// const message = "level";
+// console.log("🚀 ~ message:", message);
+
+// const rozriz = message.split("");
+// console.log("🚀 ~ rozriz:", rozriz);
+
+// const rev = rozriz.reverse();
+// console.log("🚀 ~ rozriz:", rozriz);
+
+// const skladaemo = rev.join("");
+// console.log("🚀 ~ skladaemo:", skladaemo);
+
+// function perev() {
+//   if (message === skladaemo) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log("🚀 ~ perev ~ perev:", perev());
+
+//* Цикли
+// Задача: Створи функцію, яка виводить таблицю множення числа від 1 до 10.
+// javascriptmultiplicationTable(5);
+// 5 x 1 = 5
+// 5 x 2 = 10
+// ... до 5 x 10 = 50
+
+//? 5. Умовні оператори
+// Задача: Напиши функцію, яка визначає оцінку за балами: 90-100 = "A", 80-89 = "B", 70-79 = "C", 60-69 = "D", нижче 60 = "F".
+// javascriptgetGrade(85); // "B"
+
+// function check(grade) {
+//   if (grade < 60) {
+//     return "F";
+//   } else if (grade <= 69 && grade >= 60) {
+//     return "D";
+//   } else if (grade <= 79 && grade >= 70) {
+//     return "C";
+//   } else if (grade <= 89 && grade >= 80) {
+//     return "B";
+//   } else if (grade <= 100 && grade >= 90) {
+//     return "A";
+//   } else {
+//     return "немає оцінки";
+//   }
+// }
+// console.log("🚀 ~ check ~ check:", check());
+
+//? Filter/Map/Reduce
+// Задача: Використай методи масивів, щоб знайти суму всіх парних чисел у масиві.
+// javascriptsumEvenNumbers([1, 2, 3, 4, 5, 6]); // 12
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+// // prettier-ignore
+// const check = numbers
+//   .filter((num) => num % 2 === 0)
+//   .reduce((accum,num) => {
+//     return accum + num
+//   }, 0)
+
+// console.log("🚀 ~ check:", check);
+
+// 7. Деструктуризація
+// Задача: Напиши функцію, яка приймає об'єкт користувача і виводить привітання, використовуючи деструктуризацію.
+// javascriptgreetUser({name: 'Анна', age: 22}); // "Привіт, Анна!"
+
+// 8. Template Literals
+// Задача: Створи функцію, яка генерує HTML картку користувача з його даними.
+// javascriptcreateUserCard({name: 'Петро', age: 30, job: 'Developer'});
+// // "<div><h2>Петро</h2><p>Вік: 30</p><p>Професія: Developer</p></div>"
+
+//? 9. Arrow Functions
+// Задача: Перепиши звичайну функцію на стрілочну, яка фільтрує масив і залишає тільки числа більші за 10.
+// javascriptconst filterBigNumbers = // твій код
+
+// const numbers = [5, 15, 8, 20, 3]; // [15, 20]
+// const filterBigNumbers = numbers.filter((num) => num >= 10);
+// console.log("🚀 ~ filterBigNumbers:", filterBigNumbers);
+
+//? 10. Callback Functions
+// Задача: Створи функцію calculate, яка приймає два числа і callback-функцію для операції (додавання, віднімання тощо).
+// javascriptcalculate(5, 3, (a, b) => a + b); // 8
+// calculate(10, 4, (a, b) => a - b); // 6
+
+// function foo(a, b, callback) {
+//   return a + b;
+// }
+// console.log("🚀 ~ foo ~ foo:", foo(10, 4));
+
 //! Підрахунок годин в неділю пн-чт
 
-//? --------- Лічильник LMS
-const totalHours = 18;
+// //? --------- Лічильник LMS
+// const totalHours = 18;
 
-//? --------- Вся неділя
-const calendar = [
-  { name: "monday", hours: 24 },
-  { name: "tuesday", hours: 24 },
-  { name: "wednesday", hours: 24 },
-  { name: "thursday", hours: 24 },
-  { name: "friday", hours: 24 },
-  { name: "saturday", hours: 24 },
-  { name: "sunday", hours: 24 },
-];
+// //? --------- Вся неділя
+// const calendar = [
+//   { name: "monday", hours: 24 },
+//   { name: "tuesday", hours: 24 },
+//   { name: "wednesday", hours: 24 },
+//   { name: "thursday", hours: 24 },
+//   { name: "friday", hours: 24 },
+//   { name: "saturday", hours: 24 },
+//   { name: "sunday", hours: 24 },
+// ];
 
-let resultatHoursAllWeek = 0;
-const dimaWork = calendar.map((calc) => {
-  resultatHoursAllWeek += calc.hours;
-});
-console.log(resultatHoursAllWeek);
+// let resultatHoursAllWeek = 0;
+// const dimaWork = calendar.map((calc) => {
+//   resultatHoursAllWeek += calc.hours;
+// });
+// console.log(resultatHoursAllWeek);
 
-//? --------- Зріз годин понеділок - четверг
+// //? --------- Зріз годин понеділок - четверг
 
-const MonToThur = calendar
-  .slice(0, 4) // бере перші 4 елементи: monday, tuesday, wednesday, thursday
-  .reduce((sum, day) => sum + day.hours, 0); // підсумовує їхні години
-console.log(MonToThur); // 96
+// const MonToThur = calendar
+//   .slice(0, 4) // бере перші 4 елементи: monday, tuesday, wednesday, thursday
+//   .reduce((sum, day) => sum + day.hours, 0); // підсумовує їхні години
+// console.log(MonToThur); // 96
 
-//? --------- Скільки провчився з пн по чт
+// //? --------- Скільки провчився з пн по чт
 
-const average = MonToThur / totalHours;
-console.log(average);
+// const average = MonToThur / totalHours;
+// console.log(average);
 
-const arr = [1, 2, 3];
-for (const el of arr) {
-  console.log(el);
-}
+// const arr = [1, 2, 3];
+// for (const el of arr) {
+//   console.log(el);
+// }
+
+//* Сортування
+// Задача: Напиши функцію, яка сортує масив об'єктів студентів за їх оцінками (від найвищої до найнижчої).
+// javascriptsortByGrade
+
+// const info = [
+//   { name: "Іван", grade: 85 },
+//   { name: "Ольга", grade: 92 },
+//   { name: "Петро", grade: 78 },
+// ];
+// const balAscr = info.toSorted((a, b) => a.grade - b.grade);
+// console.log("🚀 ~ balAscr:", balAscr);
+
+//? Унікальні значення
+// Задача: Створи функцію, яка видаляє дублікати з масиву.
+// javascriptremoveDuplicates([1, 2, 2, 3, 4, 4, 5]); // [1, 2, 3, 4, 5]
+
+// 13. Лічильник символів
+// Задача: Напиши функцію, яка підраховує скільки разів кожна буква зустрічається в рядку.
+// javascriptcountLetters('hello');
+// // { h: 1, e: 1, l: 2, o: 1 }
+
+//* 14. Пошук в масиві
+// Задача: Створи функцію, яка знаходить користувача за ID в масиві об'єктів.
+// const info = [
+//   { id: 1, name: "Анна" },
+//   { id: 2, name: "Богдан" },
+// ];
+
+// const busco = info.filter((el) => {
+//   if (el.id === 1) {
+//     return el.name;
+//   } else if (el.id === 2) {
+//     return el.name;
+//   } else {
+//     return "введи id";
+//   }
+// });
+// console.log("🚀 ~ busco:", busco);
+
+//* 15. Перевірка віку
+// Задача: Напиши функцію, яка фільтрує масив користувачів і повертає тільки тих, кому 18+ років.
+// const info = [
+//   { name: "Марія", age: 17 },
+//   { name: "Олексій", age: 25 },
+//   { name: "Софія", age: 19 },
+// ];
+
+// // prettier-ignore
+// const buscoFun = info
+//   .filter((verifi) => verifi.age >= 18)
+//   .map((nombre) => nombre.name)
+// console.log("🚀 ~ buscoFun:", buscoFun);
+
+//* Реверс рядка
+// Задача: Створи функцію, яка перевертає рядок навпаки.
+// javascriptreverseString('JavaScript'); // 'tpircSavaJ'
+
+// const mesRev = "JavaScript";
+// const revFoo = mesRev.split("").toReversed().join("");
+// console.log("🚀 ~ revFoo:", revFoo);
+
+//* Середнє значення
+// Задача: Створи функцію, яка обчислює середній бал студента.
+// javascriptcalculateAverage([80, 90, 85, 95]); // 87.5
+
+// const grade = [80, 90, 85, 95];
+
+// const averBal =
+//   grade.reduce((accum, bal) => {
+//     return accum + bal;
+//   }, 0) / grade.length;
+// console.log("🚀 ~ averBal:", averBal);
+
+// Перевірка типу даних
+// Задача: Напиши функцію, яка приймає значення і повертає його тип (number, string, boolean, array, object).
+// javascriptgetType(123); // 'number'
+// getType([1, 2]); // 'array'
+// getType({name: 'Іван'}); // 'object'
+
+//? Капіталізація
+// Задача: Створи функцію, яка робить першу літеру кожного слова великою.
+// javascriptcapitalizeWords('привіт як справи'); // 'Привіт Як Справи'
+
+const message = "привіт як справи";
+
+// 21. Факторіал
+// Задача: Напиши функцію, яка обчислює факторіал числа (наприклад, 5! = 5×4×3×2×1).
+// javascriptfactorial(5); // 120
+// 22. Пошук найдовшого слова
+// Задача: Знайди найдовше слово в реченні.
+// javascriptfindLongestWord('Я вивчаю JavaScript'); // 'JavaScript'
+// 23. Конвертер температури
+// Задача: Створи функцію, яка конвертує градуси Цельсія в Фаренгейти.
+// javascriptcelsiusToFahrenheit(0); // 32
+// celsiusToFahrenheit(100); // 212
+// 24. Перевірка на число
+// Задача: Напиши функцію, яка перевіряє чи всі елементи масиву є числами.
+// javascriptareAllNumbers([1, 2, 3]); // true
+// areAllNumbers([1, '2', 3]); // false
+// 25. Групування за категорією
+// Задача: Створи функцію, яка групує товари за категоріями.
+// javascriptgroupByCategory([
+//   {name: 'Яблуко', category: 'фрукти'},
+//   {name: 'Морква', category: 'овочі'},
+//   {name: 'Банан', category: 'фрукти'}
+// ]);
+// // {
+// //   фрукти: [{name: 'Яблуко', category: 'фрукти'}, {name: 'Банан', category: 'фрукти'}],
+// //   овочі: [{name: 'Морква', category: 'овочі'}]
+// // }
