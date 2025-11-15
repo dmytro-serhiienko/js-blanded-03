@@ -9,6 +9,22 @@
 // Використайте цикл for для перебору елементів масиву.
 // Нумерація елементів повинна починатися з 1 (а не з 0).
 
+// const styles = ["jazz", "blues"];
+// styles.push("rock-n-roll");
+// console.log("🚀 ~ styles:", styles);
+
+// //* Варіант
+// const logItems = styles.map((item, i) => {
+//   console.log(`${i + 1} - ${item}`);
+// });
+
+//* Варіант
+// function logItems(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     console.log(`${i + 1} - ${styles[i]}`);
+//   }
+// }
+
 // ?Завдання 2:
 // Напишіть функцію checkLogin(array), яка:
 // Приймає масив логінів як аргумент.
@@ -17,13 +33,46 @@
 // Якщо ім'я є в масиві – виводить повідомлення через alert: "Welcome, <name>!"
 // Якщо ім'я відсутнє – виводить повідомлення: "User not found".
 
-// const logins = ["Peter", "John", "Igor", "Sasha"];
+const logins = ["Peter", "John", "Igor", "Sasha"];
+
+//* Варіант
+// function checkLogin(logins) {
+//   const checker = prompt("Напішіть свій username");
+
+//   if (logins.includes(checker)) {
+//     alert(`Welcome, ${checker}!`);
+//   } else {
+//     alert("User not found");
+//   }
+// }
+
+// checkLogin(logins);
+
+//* Варіант
+// const checkLogin = logins.filter((user) => {
+//   const checker = prompt("Напішіть свій username");
+//   if (logins.includes(checker)) {
+//     alert(`Welcome, ${checker}!`);
+//   } else {
+//     alert("User not found");
+//   }
+// });
 
 // ?Завдання 3:
 // Напишіть функцію caclculateAverage(),
 // яка приймає довільну кількість
 // аргументів і повертає їхнє середнє значення.
 // Додайте перевірку, що аргументи - це числа.
+
+//* Варіант
+// const numbers = [1, 3, 4, 8, 75, 3];
+
+// const result =
+//   numbers.reduce((accum, num) => {
+//     return accum + num;
+//   }, 0) / numbers.length;
+
+// console.log(result(1, 3, 4, 8, 75, 3));
 
 // ?Завдання 4:
 // Напишіть функцію, яка сумуватиме сусідні числа
@@ -43,6 +92,15 @@
 // в іншому випадку - поверніть 'Sory, it is not an array!'.
 
 // const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+
+// findSmallestNumber(numbers){
+//     numbers.reduce((accum, num) => {
+//         if (accum > num) {
+//             return "+";
+//         }
+
+//     }
+// }
 
 // ?Завдання 6:
 // Напишіть функцію findLongestWord(string), яка

@@ -880,7 +880,6 @@
 // console.log(cart1.getTotalQuantity());
 
 //!  ✅ Задача 6 — Магазин з фільтром і знижками
-
 // Створи клас DiscountStore, який:
 
 // 1️⃣ Має приватне поле
@@ -898,47 +897,143 @@
 
 // 	•	getAveragePrice() — повертає середню ціну товару
 
-class DiscountStore {
-  #products = [];
+// class DiscountStore {
+//   #products = [];
 
-  addProduct(name, price, category) {
-    return this.#products.push({ name, price, category });
-  }
+//   addProduct(name, price, category) {
+//     return this.#products.push({ name, price, category });
+//   }
 
-  getProducts() {
-    return this.#products;
-  }
+//   getProducts() {
+//     return this.#products;
+//   }
 
-  getProductsByCategory(category) {
-    return this.#products.filter((el) => {
-      return el.category === category;
-    });
-  }
+//   getProductsByCategory(category) {
+//     return this.#products.filter((el) => {
+//       return el.category === category;
+//     });
+//   }
 
-  getTotalPrice(discount = 0) {
-    return this.#products.reduce((accum, num) => {
-      return accum + num.price;
-    }, 0);
-  }
+//   getTotalPrice(discount = 0) {
+//     return this.#products.reduce((accum, num) => {
+//       return accum + num.price;
+//     }, 0);
+//   }
 
-  getAveragePrice() {
-    return (
-      this.#products.reduce((accum, num) => {
-        return accum + num.price;
-      }, 0) / this.#products.length
-    );
-  }
-}
+//   getAveragePrice() {
+//     return (
+//       this.#products.reduce((accum, num) => {
+//         return accum + num.price;
+//       }, 0) / this.#products.length
+//     );
+//   }
+// }
 
-const store1 = new DiscountStore();
+// const store1 = new DiscountStore();
 
-store1.addProduct("Кросівки", 400, "Взуття");
-store1.addProduct("Сандалі", 200, "Взуття");
-store1.addProduct("Куртка", 500, "Верхній одяг");
-store1.addProduct("Кепка", 200, "Головні убори");
+// store1.addProduct("Кросівки", 400, "Взуття");
+// store1.addProduct("Сандалі", 200, "Взуття");
+// store1.addProduct("Куртка", 500, "Верхній одяг");
+// store1.addProduct("Кепка", 200, "Головні убори");
 
 // console.table(store1.getProducts());
 
-console.log(store1.getProductsByCategory("Взуття"));
+// console.table(store1.getProductsByCategory("Взуття"));
 
-console.log(store1.getAveragePrice());
+// console.log(store1.getAveragePrice());
+
+//! 🟦 Задача — Студент і оцінки
+// 	1.	Створи клас Student із властивостями: ім’я та масив оцінок.
+// 	2.	Додай методи, щоб:
+// 	•	додавати нову оцінку,
+// 	•	обчислювати середню оцінку.
+// 	3.	Створи звичайний об’єкт із ім’ям та масивом оцінок (не через клас).
+// 	4.	Використовуй механізми call, apply або bind, щоб запустити методи класу для звичайного об’єкта і отримати його середню оцінку.
+
+// class Student {
+//   constructor(name, grade) {
+//     this.name = name;
+//     this.grade = grade;
+//   }
+
+//   addName(name) {
+//     return this.name;
+//   }
+
+//   addGrade(grade) {
+//     return this.grade;
+//   }
+// }
+
+// const dima = new Student("Дмитро", 22);
+// console.log("🚀 ~ dima:", dima);
+// console.log(dima.addName());
+
+// const lana = new Student("Лана", 33);
+// console.log("🚀 ~ lana:", lana);
+// console.log(lana.addName());
+
+// class Teacher extends Student {
+//   constructor(name, clas) {
+//     super(name);
+//     this.clas = clas;
+//   }
+
+//   addName(name) {
+//     return this.name;
+//   }
+
+//   addClas(clas) {
+//     return this.clas;
+//   }
+// }
+
+// const hord = new Teacher("Гордій", "Математика");
+// console.log("🚀 ~ hord:", hord);
+// console.log(hord.addClas());
+
+// console.log(dima.addName.call(dima));
+
+//! Умова:
+// 	1.	Створи клас Product з властивостями:
+// 	•	name — назва товару
+// 	•	price — ціна
+// 	2.	Створи клас Store, який має:
+// 	•	масив products для збереження товарів
+// 	•	метод addProduct(product) — додає товар у масив
+
+// 	•	метод getTotalPrice() — повертає суму цін усіх товарів
+
+// 	3.	Створи звичайний об’єкт (не екземпляр Store), який теж має масив products.
+// 	4.	Використовуй call, apply або bind, щоб викликати метод getTotalPrice() для звичайного об’єкта, і отримати суму його товарів.
+
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class Store {
+  products = [];
+
+  addProduct(product) {
+    return this.products.push(product);
+  }
+
+  getTotalPrice() {
+    return this.products.reduce((accum, num) => {
+      return accum + num.price;
+    }, 0);
+  }
+}
+
+const stock = {
+  products: [
+    { name: "Кросівки", price: 400 },
+    { name: "Сандалі", price: 200 },
+  ],
+};
+console.log("🚀 ~ stock:", stock.products);
+
+console.log(Store.prototype.getTotalPrice.call(stock));
