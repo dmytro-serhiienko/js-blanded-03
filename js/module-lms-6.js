@@ -994,46 +994,77 @@
 
 // console.log(dima.addName.call(dima));
 
-//! Умова:
-// 	1.	Створи клас Product з властивостями:
-// 	•	name — назва товару
-// 	•	price — ціна
-// 	2.	Створи клас Store, який має:
-// 	•	масив products для збереження товарів
-// 	•	метод addProduct(product) — додає товар у масив
+//! Задача 2 — Клас User
 
-// 	•	метод getTotalPrice() — повертає суму цін усіх товарів
+// Умова:
+// Створи клас User, який має:
+// 	•	Конструктор з name та email
+// 	•	Метод getInfo() — повертає рядок у форматі: "User: <name>, Email: <email>"
 
-// 	3.	Створи звичайний об’єкт (не екземпляр Store), який теж має масив products.
-// 	4.	Використовуй call, apply або bind, щоб викликати метод getTotalPrice() для звичайного об’єкта, і отримати суму його товарів.
+// Вхідні дані:
+// const name = "Dmytro";
+// const email = "dmytro@example.com";
 
-class Product {
-  constructor(name, price) {
-    this.name = name;
-    this.price = price;
-  }
-}
+// class User {
+//   constructor(name, email) {
+//     this.name = name;
+//     this.email = email;
+//   }
 
-class Store {
-  products = [];
+//   getInfo() {
+//     return `User: ${this.name}, Email: ${this.email}`;
+//   }
+// }
 
-  addProduct(product) {
-    return this.products.push(product);
-  }
+// const dima = new User("Dmytro", "ment@.com");
+// console.log("🚀 ~ dima:", dima);
 
-  getTotalPrice() {
-    return this.products.reduce((accum, num) => {
-      return accum + num.price;
-    }, 0);
-  }
-}
+// console.log(dima.getInfo());
 
-const stock = {
-  products: [
-    { name: "Кросівки", price: 400 },
-    { name: "Сандалі", price: 200 },
-  ],
-};
-console.log("🚀 ~ stock:", stock.products);
+// ! Задача 1 — Product
 
-console.log(Store.prototype.getTotalPrice.call(stock));
+// Створи клас Product з властивостями: name та price.
+// Додай метод getPriceWithTax(taxPercent), який повертає ціну з врахованим податком.
+
+// class Product {
+//   constructor(name, price) {
+//     this.name = name;
+//     this.price = price;
+//   }
+
+//   getPriceWithTax(taxPercent) {
+//     return this.price + this.price * (taxPercent / 100);
+//   }
+// }
+
+// const tomato = new Product("Tomato", 50);
+
+// console.log(tomato.getPriceWithTax(10));
+
+// ! Задача 2 — Store
+
+// Створи клас Store, який зберігає продукти у масиві.
+// Методи:
+// 	•	addProduct(product) — додає продукт у масив
+// 	•	getTotalPrice() — повертає суму цін всіх продуктів
+
+// class Store {
+//   constructor() {
+//     this.storage = [];
+//   }
+
+//   addProduct(product) {
+//     this.storage.push(product);
+//   }
+
+//   getTotalPrice() {
+//     return this.storage.reduce((sum, product) => sum + product.price, 0);
+//   }
+// }
+
+// // Використання
+// const store = new Store();
+// store.addProduct({ name: "Milk", price: 30 });
+// store.addProduct({ name: "Bread", price: 20 });
+
+// console.log(store.getTotalPrice()); // 50

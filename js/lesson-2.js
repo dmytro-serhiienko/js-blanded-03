@@ -13,17 +13,21 @@
 // styles.push("rock-n-roll");
 // console.log("🚀 ~ styles:", styles);
 
-// //* Варіант
-// const logItems = styles.map((item, i) => {
-//   console.log(`${i + 1} - ${item}`);
-// });
+// const ind = styles.indexOf("blues");
+// if (ind !== -1) {
+//   styles[ind] = "classic";
+// }
 
-//* Варіант
 // function logItems(array) {
-//   for (let i = 0; i < array.length; i++) {
-//     console.log(`${i + 1} - ${styles[i]}`);
+//   //   for (let i = 0; i < array.length; i++) {
+//   //     console.log(`${i + 1} - ${styles[i]}`);
+//   //   }
+
+//   for (const element of array) {
 //   }
 // }
+
+// logItems(styles);
 
 // ?Завдання 2:
 // Напишіть функцію checkLogin(array), яка:
@@ -33,9 +37,9 @@
 // Якщо ім'я є в масиві – виводить повідомлення через alert: "Welcome, <name>!"
 // Якщо ім'я відсутнє – виводить повідомлення: "User not found".
 
-const logins = ["Peter", "John", "Igor", "Sasha"];
+// const logins = ["Peter", "John", "Igor", "Sasha"];
 
-//* Варіант
+// //* Варіант
 // function checkLogin(logins) {
 //   const checker = prompt("Напішіть свій username");
 
@@ -49,13 +53,8 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // checkLogin(logins);
 
 //* Варіант
-// const checkLogin = logins.filter((user) => {
+// const checkLogin = logins.some((user) => {
 //   const checker = prompt("Напішіть свій username");
-//   if (logins.includes(checker)) {
-//     alert(`Welcome, ${checker}!`);
-//   } else {
-//     alert("User not found");
-//   }
 // });
 
 // ?Завдання 3:
@@ -65,14 +64,34 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // Додайте перевірку, що аргументи - це числа.
 
 //* Варіант
-// const numbers = [1, 3, 4, 8, 75, 3];
-
+// const numbers = [10, 10, 30];
 // const result =
 //   numbers.reduce((accum, num) => {
 //     return accum + num;
 //   }, 0) / numbers.length;
+// console.log("🚀 ~ result:", result);
 
-// console.log(result(1, 3, 4, 8, 75, 3));
+//* Варіант
+// function calculateAverage(...args) {
+//   let sum = 0;
+//   let count = 0;
+
+//   for (const arg of args) {
+//     if (typeof arg === "number") {
+//       sum += arg;
+//       count++;
+//     }
+//   }
+
+//   if (count === 0) {
+//     return "Немає чисел";
+//   }
+
+//   return sum / count;
+// }
+
+// console.log(calculateAverage(10, 10, 30));
+// console.log(calculateAverage());
 
 // ?Завдання 4:
 // Напишіть функцію, яка сумуватиме сусідні числа
@@ -84,6 +103,18 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // третє - з четвертим і так до кінця.
 // В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
 
+//* Варіант
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+// const result = someArr.reduce((accum, num, ind, arr) => {
+//   if (ind < arr.length - 1) {
+//     accum.push(num + arr[ind + 1]);
+//   }
+//   return accum;
+// }, []);
+
+// console.log("🚀 ~ result:", result);
+
 // ?Завдання 5:
 // Напишіть функцію findSmallestNumber(numbers),
 // яка шукає найменше число в масиві.
@@ -93,14 +124,24 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 
 // const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
 
-// findSmallestNumber(numbers){
-//     numbers.reduce((accum, num) => {
-//         if (accum > num) {
-//             return "+";
-//         }
+// function findSmallestNumber(numbers) {
+//   if (!Array.isArray(numbers)) {
+//     return "це не масив";
+//   }
 
+//   let smallest = numbers[0];
+
+//   for (const num of numbers) {
+//     if (num < smallest) {
+//       smallest = num;
 //     }
+//   }
+
+//   return smallest;
 // }
+
+// console.log(findSmallestNumber(numbers));
+// console.log(findSmallestNumber("hello"));
 
 // ?Завдання 6:
 // Напишіть функцію findLongestWord(string), яка
@@ -108,6 +149,7 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // пробілами (параметр string), і повертатиме найдовше слово у реченні.
 
 // Скористайтесь цим прикладом виклику функції для перевірки її роботи:
+
 // console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
 
 // ?Завдання 7:
@@ -119,11 +161,23 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // '<ключ>:<значення>' використовуя Object.keys() та for...of
 
 // const user = {
-//     name: "John",
-//     age: 20,
-//     hobby: "tenis",
-//     premium: true,
-//   };
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+//   premium: true,
+// };
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+
+// const keys = Object.keys(user);
+// let result = "";
+
+// for (const key of keys) {
+//   result += `${key}: ${user[key]} `;
+// }
+
+// console.log(result.trim());
 
 // ?Завдання 8:
 // Є об'єкт, в якому зберігаються зарплати команди
@@ -132,10 +186,19 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // Якщо об'єкт salaries пустий, то результат має бути 0
 
 // const salaries = {
-//     Mango: 100,
-//     Poly: 160,
-//     Ajax: 1470,
-//   };
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
+
+// const extract = Object.values(salaries);
+// console.log("🚀 ~ extract:", extract);
+
+// let sum = 0;
+// if (extract.length > 0) {
+//   sum = extract.reduce((accum, el) => accum + el, 0);
+// }
+// console.log("🚀 ~ sum:", sum);
 
 // ?Завдання 9:
 // Створіть об'єкт calculator з наступними методами:
@@ -147,6 +210,30 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
 // методи sum і mult мають повертати рядок 'No such propeties'
 
+// const calculator = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+
+//   sum() {
+//     return this.exist() ? this.a + this.b : false;
+//   },
+
+//   mult() {
+//     return this.exist() ? this.a * this.b : false;
+//   },
+
+//   exist() {
+//     return this.a !== undefined && this.b !== undefined;
+//   },
+// };
+
+// console.log(calculator.sum());
+
+// calculator.read(5, 3);
+// console.log(calculator.sum());
+
 // ?Завдання 10:
 // Напишіть функцію calcTotalPrice(fruits, fruitName),
 // яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
@@ -157,10 +244,20 @@ const logins = ["Peter", "John", "Igor", "Sasha"];
 // назвою фрукта, це також треба урахувати.
 
 // const fruits = [
-//     { name: "Яблуко", price: 45, quantity: 7 },
-//     { name: "Апельсин", price: 60, quantity: 4 },
-//     { name: "Банан", price: 125, quantity: 8 },
-//     { name: "Груша", price: 350, quantity: 2 },
-//     { name: "Виноград", price: 440, quantity: 3 },
-//     { name: "Банан", price: 125, quantity: 3 },
-//   ];
+//   { name: "Яблуко", price: 45, quantity: 7 },
+//   { name: "Апельсин", price: 60, quantity: 4 },
+//   { name: "Банан", price: 125, quantity: 8 },
+//   { name: "Груша", price: 350, quantity: 2 },
+//   { name: "Виноград", price: 440, quantity: 3 },
+//   { name: "Банан", price: 125, quantity: 3 },
+// ];
+
+// const fruitStock = fruits.reduce((accum, el) => {
+//   if (accum[el.name]) {
+//     accum[el.name] = accum[el.name] + el.quantity * el.price;
+//   } else {
+//     accum[el.name] = el.quantity * el.price;
+//   }
+//   return accum;
+// }, {});
+// console.table(fruitStock);
