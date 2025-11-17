@@ -298,20 +298,94 @@ const numbers = [1, 2, 3, 4, 5];
 
 // console.log(result); // 24
 
-// ?Завдання 12:
+//? Завдання 12:
 // Напиши клас Client який створює об'єкт з властивостями login email.
 // Оголоси приватні властивості #login #email, доступ до яких зроби
 // через геттер та сеттер login email
 
-class Client {
-  #login = "";
-  #email = "";
+// class Client {
+//   #login;
+//   #email;
 
-  constructor(login, email) {
-    this.login = login;
-    this.email = email;
-  }
-}
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+
+//   set login(value) {
+//     this.#login = value;
+//   }
+
+//   set email(value) {
+//     this.#email = value;
+//   }
+
+//   get getInfo() {
+//     return `Login: ${this.#login}, email: ${this.#email}`;
+//   }
+// }
+
+// const client1 = new Client("Dmytro", "dima@mail.com");
+// // console.log("🚀 ~ client1:", client1);
+// console.log(client1.getInfo);
+
+// const client2 = new Client("Petro", "petro@mail.com");
+// // console.log("🚀 ~ client2:", client2);
+// console.log(client2.getInfo);
+// *
+// class Worker {
+//   #name;
+//   #surname;
+//   #age;
+
+//   constructor(name, surname, age, position, department) {
+//     this.#name = name;
+//     this.#surname = surname;
+//     this.#age = age;
+//     this.position = position;
+//     this.department = department;
+//   }
+
+//   set name(newName) {
+//     this.#name = newName;
+//   }
+
+//   set surnname(newSurname) {
+//     this.#surname = newSurname;
+//   }
+
+//   set age(newAge) {
+//     this.#age = newAge;
+//   }
+
+//   get nameSurname() {
+//     return `Name:${this.#name}, Surname:${this.#surname}`;
+//   }
+
+//   get workPosition() {
+//     return `Position:${this.position}, Departament:${this.department}`;
+//   }
+
+//   get allInfo() {
+//     return `Name: ${this.#name}; Surname: ${this.#surname}; Age: ${
+//       this.#age
+//     }; Position: ${this.position}; Departament: ${this.department};`;
+//   }
+// }
+
+// const worker = new Worker("Bob", "Maquin", 31);
+// console.log("🚀 ~ worker:", worker);
+
+// worker.position = "Sales Manager";
+// worker.department = "Electronic";
+// console.log("🚀 ~ worker:", worker);
+
+// console.log(worker.allInfo);
+
+// console.log(worker.workPosition);
+
+// // сеттер тільки для приватних ?
+// // порядок виводу інфо
 
 // ?Завдання 13:
 //  Наслідування у класах!
@@ -330,3 +404,39 @@ class Client {
 //  - salary - зарплата співробітника;
 //  - department - відділ, в якому працює співробітник.
 // Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який повертає об'єкт з зарплатою співробітника та відділом, в якому він працює.
+
+// class Person {
+//   constructor(name, age, gender, email) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+//     this.email = email;
+//   }
+
+//   getDetails() {
+//     return `Name: ${this.name}; Age: ${this.age}; Gender: ${this.gender}; Email: ${this.email};`;
+//   }
+// }
+
+// class Employee extends Person {
+//   constructor(name, age, gender, email, salary, department) {
+//     super(name, age, gender, email);
+//     this.salary = salary;
+//     this.department = department;
+//   }
+
+//   getEmployeeDetails() {
+//     return `Salary: ${this.salary}$; Department: ${this.department};`;
+//   }
+// }
+
+// const person1 = new Person("John", 31, "male", "john@mail.com");
+// // console.log("🚀 ~ person1:", person1);
+// // console.log(person1.getDetails());
+
+// // prettier-ignore
+// const employee = new Employee("Bob", 41, "male", "bob@gmail.com", 5500, "Director");
+// console.log(employee.getDetails());
+// console.log(employee.getEmployeeDetails());
+
+// console.log(employee.getDetails() + employee.getEmployeeDetails());

@@ -2035,7 +2035,3 @@ const arr = [3, 7, 2, 9, 1];
 
 // const mango = new User("Mango", "mango@mail.com"); // "Mango mango@mail.com"
 // console.log(mango); // {}
-
-
-
-
