@@ -1450,12 +1450,11 @@
 // item1.insertAdjacentHTML("beforeend", newList);
 
 // ! Умова
-
-const products = [
-  { name: "Milk", price: 25, img: "milk.jpg" },
-  { name: "Bread", price: 15, img: "bread.jpg" },
-  { name: "Apples", price: 30, img: "apples.jpg" },
-];
+// const products = [
+//   { name: "Milk", price: 25, img: "milk.jpg" },
+//   { name: "Bread", price: 15, img: "bread.jpg" },
+//   { name: "Apples", price: 30, img: "apples.jpg" },
+// ];
 
 // Завдання:
 // 	1.	Створити <li> для кожного продукту з <img>, <h3>, <p> і <button>Замовити</button>
@@ -1464,34 +1463,68 @@ const products = [
 // 	•	При натисканні збільшувати лічильник замовлень на 1
 // 	•	Відображати значення у <span class="order-count"></span>
 
-const item1 = document.querySelector(".product-gallery");
+// const item1 = document.querySelector(".product-gallery");
 
-// prettier-ignore
-const perebor = products
-  .map(
-    (el) => `
-  <li>
-  <img src="${el.img}">
-  <h3>${el.name}</h3>
-  <p>${el.price}</p>
-  <button class="btn-order">Замовити</button>
-  </li>`
-  )
-  .join("");
+// // prettier-ignore
+// const perebor = products
+//   .map(
+//     (el) => `
+//   <li>
+//   <img src="${el.img}">
+//   <h3>${el.name}</h3>
+//   <p>${el.price}</p>
+//   <button class="btn-order">Замовити</button>
+//   </li>`
+//   )
+//   .join("");
 
-item1.insertAdjacentHTML("beforeend", perebor);
+// item1.insertAdjacentHTML("beforeend", perebor);
 
-const podiya = document.querySelectorAll(".btn-order");
-const spanilo = document.querySelector(".order-count");
-let count = 0;
+// const podiya = document.querySelectorAll(".btn-order");
+// const spanilo = document.querySelector(".order-count");
+// let count = 0;
 
-// podiya.addEventListener(
-//   "click",
-//   (event) => (spanilo.textContent = event.target)
+// // podiya.addEventListener(
+// //   "click",
+// //   (event) => (spanilo.textContent = event.target)
 
-podiya.forEach((el) => {
-  el.addEventListener("click", () => {
-    count++;
-    spanilo.textContent = count;
-  });
-});
+// podiya.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     count++;
+//     spanilo.textContent = count;
+//   });
+// });
+
+//! Для кожного <li> потрібно додати порядковий номер (1, 2, 3…) у тексті елемента.
+
+// const item1 = document.querySelectorAll("#numberedList li");
+
+// const pererobka = item1.forEach((el, ind) => {
+//   el.textContent = `${ind + 1} ${el.textContent}`;
+// });
+// console.log("🚀 ~ pererobka:", pererobka);
+
+// ! 🟩 Задача 3 — Робота з класами(add / remove / toggle)
+// Є блок <div> з текстом і кнопка.
+// Тобі потрібно зробити так, щоб при натисканні на кнопку клас active додавався, а при повторному натисканні — видалявся (toggle).
+// Стиль класу можеш придумати сам.
+
+// const item1 = document.querySelector("#toggleClassBtn");
+// const item2 = document.querySelector("#toggleBox");
+
+// item1.addEventListener("click", (klaz) => {
+//   item2.classList.toggle("active");
+// });
+
+//! 🟦 Задача 4 — Додати новий <li> у список при натисканні кнопки
+// 	•	Є поле вводу (input) і кнопка.
+// 	•	Коли користувач вводить текст і натискає кнопку — створити новий <li> і додати його в кінець списку.
+// 	•	Якщо поле порожнє — нічого не додавати.
+
+const item1 = document.querySelector("#addInput");
+const item2 = document.querySelector("#addItemBtn");
+const item3 = document.querySelector("#addList");
+
+item2.addEventListener("click", (klaz) => {
+  item3.
+})
