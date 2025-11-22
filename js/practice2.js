@@ -1139,20 +1139,359 @@
 //   divTheme.classList.toggle("on");
 // });
 
-// ! Задача 7: Динамічне додавання елементів у список
-// Умова JS:
-// 	1.	Коли користувач вводить текст у поле і натискає Enter, створюй новий <li> з введеним текстом.
-// 	2.	Додавай цей <li> у кінець списку .todo-list.
-// 	3.	Після додавання очищуй поле вводу.
+// ! задача
+// const item1 = document.querySelector(".todo-input");
+// const item2 = document.querySelector(".sp");
 
-const item1 = document.querySelector(".todo-input");
-const item2 = document.querySelector(".todo-list");
+// item1.addEventListener("input", (event) => {
+//   // item2.textContent = event.target.value.trim();
 
-item1.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    const li = document.createElement("li");
-    li.textContent = event.target.value; // текст додаємо тут
-    item2.appendChild(li); // вставляємо в список тут
-    event.target.value = ""; // очищаємо поле вводу
-  }
+//   if (/\d/.test(item1.value)) {
+//     item2.textContent = `Error - numbers on input`;
+//   } else {
+//     item2.textContent = event.target.value.trim();
+//   }
+// });
+
+//!  Потрібно додати в нього один <li> з текстом "Hello".
+// const item1 = document.querySelector(".list");
+//*  var 1
+// item1.innerHTML = `
+// <li class="list-item">
+// <p class="list-text">Це мій текст</p>
+// </li>
+// `;
+// console.log("🚀 ~ item1:", item1);
+
+// * var2
+// const newItem = document.createElement("li");
+// newItem.textContent = "New Text";
+
+// item1.append(newItem);
+
+// console.log(item1.innerHTML);
+
+//! ⭐ Задача №2: додати 3 елементи в список через цикл
+// Є <ul class="list"></ul>.
+// Треба додати три li:
+// 	•	“Item 1”
+// 	•	“Item 2”
+// 	•	“Item 3”
+
+// Використай цикл for.
+
+// const item1 = document.querySelector(".list");
+
+// for (let index = 0; index < 3; index++) {
+//   const element = document.createElement("li");
+
+//   element.textContent = `Item ${index + 1}`;
+
+//   item1.append(element);
+// }
+
+//! ⭐ Задача №3: додати масив текстів у список
+// Завдання:
+
+// Є масив:
+
+// const fruits = ["Apple", "Banana", "Cherry"];
+
+// 1.	За допомогою масиву створити по одному <li> для кожного елемента.
+// 2.	Записати текст з масиву в textContent.
+// 3.	Додати все в список.
+
+// const item1 = document.querySelector(".list");
+
+// // * var1
+// fruits.map((el) => {
+//   const newLi = document.createElement("li");
+
+//   newLi.textContent = el;
+
+//   item1.append(newLi);
+// });
+
+// // * var 2
+// fruits.forEach((el) => {
+//   const newLi = document.createElement("li");
+
+//   newLi.textContent = el;
+
+//   item1.append(newLi);
+// });
+
+// ! Завдання:
+// 	1.	Є масив об’єктів з картинками:
+
+// const photos = [
+//   { url: "https://picsum.photos/200/150?1", alt: "Photo 1" },
+//   { url: "https://picsum.photos/200/150?2", alt: "Photo 2" },
+//   { url: "https://picsum.photos/200/150?3", alt: "Photo 3" },
+// ];
+
+// 2.	Є <ul class="photo-list"></ul> у HTML.
+// 3.	Для кожного об’єкта потрібно:
+// •	Створити <li>
+// •	Всередину <li> створити <img> з src і alt з об’єкта
+// •	Додати <li> у список
+// 4.	Використовуй forEach.
+
+// const item1 = document.querySelector(".photo-list");
+
+// photos.forEach(({ url, alt }) => {
+//   const newLi = document.createElement("li");
+//   const newImg = document.createElement("img");
+
+//   newImg.src = url;
+//   newImg.alt = alt;
+
+//   newLi.append(newImg);
+//   item1.append(newLi);
+// });
+
+//! Умова:
+
+// Є масив об’єктів:
+// const books = [
+//   { title: "Harry Potter", author: "J.K. Rowling" },
+//   { title: "The Hobbit", author: "J.R.R. Tolkien" },
+//   { title: "1984", author: "George Orwell" },
+// ];
+
+// Назва книги — Автор
+
+// 	1.	Для кожного об’єкта створити <li>
+//   2.	Вставити у < li > текст у форматі:
+// 3.	Додати < li > у DOM(в < ul class= "book-list" >).
+
+// 1.	Беремо масив → перебираємо (forEach)
+// 2.	Створюємо <li>
+// 3.	Вставляємо текст з даних масиву
+// 4.	Додаємо <li> у список
+
+// const item1 = document.querySelector(".book-list");
+
+// books.forEach(({ title, author }) => {
+//   const newLi = document.createElement("li");
+//   const newPar = document.createElement("p");
+
+//   newPar.textContent = `${title}, - ${author}`;
+
+//   newLi.append(newPar);
+//   item1.append(newLi);
+// });
+
+// ! ⭐ Задача: список користувачів з емейлами
+
+// const users = [
+//   { name: "Alice", email: "alice@example.com" },
+//   { name: "Bob", email: "bob@example.com" },
+//   { name: "Charlie", email: "charlie@example.com" },
+// ];
+
+// 	1.	Для кожного об’єкта створити <li>
+//   2.	Вставити у < li > текст у форматі:
+//   	3.	Додати <li> у DOM (<ul class="user-list">)
+
+// 🔑 Логіка:
+// 	1.	Беремо масив → перебираємо (forEach)
+// 	2.	Створюємо <li>
+// 	3.	Вставляємо текст з об’єкта (name і email)
+// 	4.	Додаємо <li> у список
+
+// const item1 = document.querySelector(".user-list");
+
+// users.forEach(({ name, email }) => {
+//   const NewLi = document.createElement("li");
+//   const NewContent = document.createElement("p");
+
+//   NewContent.textContent = `${name} (${email})`;
+
+//   NewLi.append(NewContent);
+//   item1.append(NewLi);
+// });
+
+// ! Тепер (map + шаблонні рядки + insertAdjacentHTML)
+
+// 	•	Перебираєш масив
+// 	•	Для кожного об’єкта формуєш рядок HTML (<li><p>...</p></li>)
+// 	•	Об’єднуєш усі рядки в один великий рядок через .join("")
+// 	•	Вставляєш у DOM одним викликом
+
+// ⸻
+
+// 🔑 Логіка одна і та сама:
+// масив → перебір → створення контенту → додавання в DOM
+// Просто другий спосіб ефективніший, бо DOM оновлюється один раз, а не багато разів у циклі.
+
+// const item1 = document.querySelector(".user-list");
+
+// const markup = users
+//   .map((user) => `<li><p>${user.name} (${user.email})</p></li>`)
+//   .join("");
+
+// item1.insertAdjacentHTML("beforeend", markup);
+
+// ! Задача: список продуктів
+
+// const products = [
+//   { name: "Milk", price: 15 },
+//   { name: "Bread", price: 8 },
+//   { name: "Eggs", price: 25 },
+// ];
+
+// 1.	Для кожного об’єкта створити < li > у форматі:
+// Назва: Milk — Ціна: 15
+//   	2.	Використовуй шаблонні рядки та map, щоб згенерувати HTML
+// 	3.	Встав усі елементи у DOM одним викликом (insertAdjacentHTML)
+
+// •	Масив → map → рядки HTML → join → insertAdjacentHTML
+
+// const item1 = document.querySelector(".product-list");
+
+// const perebor = products
+//   .map((el) => `<li>Назва: ${el.name} — Ціна: ${el.price}</li>`)
+//   .join(", ");
+
+// item1.insertAdjacentHTML("beforeend", perebor);
+
+// ! Умова:
+
+// Є масив об’єктів з картинками:
+
+// const gallery = [
+//   { url: "https://picsum.photos/200/150?1", alt: "Photo 1" },
+//   { url: "https://picsum.photos/200/150?2", alt: "Photo 2" },
+//   { url: "https://picsum.photos/200/150?3", alt: "Photo 3" },
+// ];
+
+// 1.	Для кожного об’єкта створити <li>
+// 2.	Всередині <li> створити <img> з src і alt з об’єкта
+// 3.	Використати map + join + insertAdjacentHTML, щоб вставити усі елементи в DOM одним викликом
+
+// const item = document.querySelector(".gallery-list");
+
+// const perebor = gallery
+//   .map((el) => `<li><img src="${el.url}" alt="${el.alt}"></li>`)
+//   .join("");
+// console.log("🚀 ~ perebor:", perebor);
+
+// item.insertAdjacentHTML("beforeend", perebor);
+
+// ! Умова:
+
+// Є масив об’єктів:
+// const products = [
+//   { name: "Milk", price: 15, img: "https://picsum.photos/100/100?1" },
+//   { name: "Bread", price: 8, img: "https://picsum.photos/100/100?2" },
+//   { name: "Eggs", price: 25, img: "https://picsum.photos/100/100?3" },
+// ];
+
+// 1.	Для кожного об’єкта створити <li>
+// 2.	Всередині <li> вставити картинку (<img>), назву та ціну
+// 3.	Використати map + join + insertAdjacentHTML, щоб вставити всі елементи за один виклик
+
+{
+  /* <li>
+  <img src="https://picsum.photos/100/100?1" alt="Milk">
+  <p>Milk — 15 грн</p>
+</li> */
+}
+
+// const item1 = document.querySelector(".product-gallery");
+
+// const newEl = products
+//   .map(
+//     (el) => `<li>
+//   <img src="${el.img}" alt="${el.name}">
+//   <p>${el.name} — ${el.price} грн</p>
+// </li>`
+//   )
+//   .join("");
+// console.log("🚀 ~ newEl:", newEl);
+
+// item1.insertAdjacentHTML("beforeend", newEl);
+
+// ! Умова
+
+// const products = [
+//   { name: "Milk", price: 25, img: "milk.jpg" },
+//   { name: "Bread", price: 15, img: "bread.jpg" },
+//   { name: "Apples", price: 30, img: "apples.jpg" },
+// ];
+
+// Твоє завдання:
+// 	1.	Створити <li> для кожного товару
+// 	2.	Додати всередину:
+// 	•	<img>
+// 	•	<h3>
+// 	•	<p>
+// 	•	кнопку <button>
+// 	3.	Вставити всі <li> в один <ul class="shop-list">
+// 	4.	Усе — через map → join → insertAdjacentHTML
+
+// const item1 = document.querySelector(".product-gallery");
+
+// const newList = products
+//   .map(
+//     (el) =>
+//       `<li>
+//       <img src="${el.img}">
+//       <h3>${el.name}</h3>
+//       <p>${el.price} грн.</p>
+//       <button>Замовити</button>
+//       </li>
+//     `
+//   )
+//   .join("");
+// console.log("🚀 ~ newList:", newList);
+
+// item1.insertAdjacentHTML("beforeend", newList);
+
+// ! Умова
+
+const products = [
+  { name: "Milk", price: 25, img: "milk.jpg" },
+  { name: "Bread", price: 15, img: "bread.jpg" },
+  { name: "Apples", price: 30, img: "apples.jpg" },
+];
+
+// Завдання:
+// 	1.	Створити <li> для кожного продукту з <img>, <h3>, <p> і <button>Замовити</button>
+// 	2.	Вставити всі <li> одним викликом у DOM через map + join + insertAdjacentHTML
+// 	3.	Додати обробник на всі кнопки “Замовити”:
+// 	•	При натисканні збільшувати лічильник замовлень на 1
+// 	•	Відображати значення у <span class="order-count"></span>
+
+const item1 = document.querySelector(".product-gallery");
+
+// prettier-ignore
+const perebor = products
+  .map(
+    (el) => `
+  <li>
+  <img src="${el.img}">
+  <h3>${el.name}</h3>
+  <p>${el.price}</p>
+  <button class="btn-order">Замовити</button>
+  </li>`
+  )
+  .join("");
+
+item1.insertAdjacentHTML("beforeend", perebor);
+
+const podiya = document.querySelectorAll(".btn-order");
+const spanilo = document.querySelector(".order-count");
+let count = 0;
+
+// podiya.addEventListener(
+//   "click",
+//   (event) => (spanilo.textContent = event.target)
+
+podiya.forEach((el) => {
+  el.addEventListener("click", () => {
+    count++;
+    spanilo.textContent = count;
+  });
 });
