@@ -4,6 +4,8 @@
 // 	•	rating
 // 	•	метод isGood() → повертає true, якщо рейтинг > 7
 
+// const { createElement } = require("react");
+
 // class Movie {
 //   constructor(title, rating) {
 //     this.title = title;
@@ -1998,16 +2000,283 @@
 // Якщо event.key === "Enter" - виведи "Ти натиснув Enter!"
 // Якщо event.key === "Escape" - очисти input (value = "")
 
-const item1 = document.querySelector("#keyboard-input");
+// const item1 = document.querySelector("#keyboard-input");
 
-const item2 = document.querySelector("#key-message");
+// const item2 = document.querySelector("#key-message");
 
-item1.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    item2.textContent = `Ти натиснув Enter!`;
-  } else if (event.key === "Escape") {
-    item1.value = "";
-  } else {
-    item2.textContent = `Ти натиснув клавішу`;
-  }
+// item1.addEventListener("keydown", (event) => {
+//   if (event.key === "Enter") {
+//     item2.textContent = `Ти натиснув Enter!`;
+//   } else if (event.key === "Escape") {
+//     item1.value = "";
+//   } else {
+//     item2.textContent = `Ти натиснув клавішу`;
+//   }
+// });
+
+// ! ✅ Завдання: Класи + Гетер/Сеттер
+
+// ✨ Частина 1 — Клас User
+// Створи клас User, який має:
+
+// Властивості (через конструктор):
+// 	•	_name
+// 	•	_age
+
+// Примітка: використовуємо нижнє підкреслення, щоб гетери/сеттери працювали коректно.
+
+// Гетер:
+// 	•	name — повертає імʼя
+
+// Сеттер:
+// 	•	age — приймає значення
+// ‣ якщо age < 0 або не число — кидає помилку
+// ‣ інакше записує в _age
+
+// Метод:
+// 	•	getInfo() — повертає рядок:
+// “Name: Ім’я, Age: Вік”
+
+// class User {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   set ageAdd(ag) {
+//     const num = Number(ag);
+//     if (isNaN(num) || num < 0) {
+//       alert`Pomulka`;
+//     } else {
+//       this.age = ag;
+//     }
+//   }
+
+//   set nameAdd(nam) {
+//     this.name = nam;
+//   }
+
+//   get Info() {
+//     return `${this.name}, ${this.age}`;
+//   }
+// }
+
+// const dima = new User();
+// dima.ageAdd = 33;
+// dima.nameAdd = "Dima";
+// console.log("🚀 ~ dima:", dima);
+
+// console.log(dima.Info);
+
+// ! Створи клас Product, який описує товар у магазині.
+
+// Вимоги:
+// 	1.	Клас повинен мати такі властивості:
+// 	•	name – назва товару (рядок)
+// 	•	price – ціна товару (число)
+// 	•	quantity – кількість товару на складі (число)
+
+//? 2.	Додати гетер totalValue, який повертає загальну вартість товару на складі (price * quantity).
+
+// ? 3.	Додати сетер updatePrice, який дозволяє змінювати ціну, але не дозволяє ставити ціну менше нуля.
+
+// ? 	4.	Додати метод sell(amount), який зменшує кількість товару на складі на amount.
+// 	•	Якщо amount більше за наявну кількість, вивести повідомлення: "Недостатньо товару на складі".
+
+//? 	5.	Створити декілька екземплярів класу та показати роботу гетера, сетера і методу sell.
+
+// class Product {
+//   constructor(name, price, quantity) {
+//     this.name = name;
+//     this.price = price;
+//     this.quantity = quantity;
+//   }
+
+//   set updatePrice(value) {
+//     if (value > 0) {
+//       this.price = value;
+//     }
+//   }
+
+//   set sell(amount) {
+//     if (this.quantity < amount) {
+//       console.log("Недостатньо товару на складі");
+//     } else {
+//       this.quantity = this.quantity - amount;
+//     }
+//   }
+
+//   get Info() {
+//     return this.price * this.quantity;
+//   }
+// }
+
+// const prod = new Product("Keyboard", 3500, 2);
+
+// prod.updatePrice = 4000;
+// prod.sell = 1;
+
+// console.log(prod.Info);
+
+// console.log("🚀 ~ prod:", prod);
+
+//! Завдання 1: querySelector vs querySelectorAll
+
+// При кліку "перший" - знайди перший .text через querySelector і додай клас highlight
+// При кліку "всі" - знайди всі .text через querySelectorAll, перебери forEach і додай highlight
+// При кліку "всі p" - знайди тільки <p class="text"> (селектор p.text) і додай highlight
+
+// const item1 = document.querySelector(".task .container .text");
+// const item11 = document.querySelector("#find-first-btn");
+
+// item11.addEventListener("click", () => {
+//   item1.classList.add("highlight");
+// });
+
+// const item2 = document.querySelectorAll(".task .container .text");
+// const item22 = document.querySelector("#find-all-btn");
+
+// item22.addEventListener("click", () => {
+//   item2.forEach((el) => {
+//     el.classList.add("highlight");
+//   });
+// });
+
+//! Завдання 3: element.style - динамічні стилі
+// На всі input повісь події (change для color, input для range)
+// Змінюй відповідні стилі через element.style.backgroundColor, element.style.width і т.д.
+// При кліку "Скинути" - поверни початкові стилі
+
+// const item1 = document.querySelector("#styled-box");
+
+// const item2 = document.querySelector("#bg-color");
+// const item3 = document.querySelector("#width-range");
+// const item4 = document.querySelector("#height-range");
+// const item5 = document.querySelector("#radius-range");
+
+// const item6 = document.querySelector("#reset-style-btn");
+
+// item2.addEventListener("change", () => {
+//   item1.style.background = item2.value;
+// });
+
+// item3.addEventListener("input", () => {
+//   item1.style.width = item3.value + "px";
+// });
+
+// item4.addEventListener("input", () => {
+//   item1.style.height = item4.value + "px";
+// });
+
+// item5.addEventListener("input", () => {
+//   item1.style.borderRadius = item5.value + "px";
+// });
+
+// item6.addEventListener("click", () => {
+//   //  Скидаємо
+//   item2.value = "";
+//   item3.value = 0;
+//   item4.value = 0;
+//   item5.value = 0;
+
+//   //  Повертаємо
+//   item1.style.backgroundColor = "";
+//   item1.style.width = "";
+//   item1.style.height = "";
+//   item1.style.borderRadius = "";
+// });
+
+//! Завдання 4: Всі методи classList
+// Завдання: Реалізуй всі 5 кнопок використовуючи відповідні методи classList
+
+// const item1 = document.querySelector("#classList-box");
+
+// const item2 = document.querySelector("#add-active-btn");
+// const item3 = document.querySelector("#remove-active-btn");
+// const item4 = document.querySelector("#toggle-active-btn");
+// const item5 = document.querySelector("#replace-btn");
+// const item6 = document.querySelector("#contains-btn");
+
+// const item7 = document.querySelector("#classList-result");
+
+// item2.addEventListener("click", () => {
+//   item1.classList.add("active");
+// });
+
+// item3.addEventListener("click", () => {
+//   item1.classList.remove("active");
+// });
+
+// item4.addEventListener("click", () => {
+//   item1.classList.toggle("active");
+// });
+
+// item5.addEventListener("click", () => {
+//   item1.classList.replace("active", "disabled");
+// });
+
+// item6.addEventListener("click", () => {
+//   if (item1.classList.contains("active")) {
+//     item7.textContent = `active YES`;
+//   } else {
+//     item7.textContent = `active NO`;
+//   }
+// });
+
+// ! Завдання 5: createElement + append + prepend
+// Створи <li> через createElement
+// Встанови textContent у форматі "Назва - Ціна грн"
+// Додай через prepend (початок) або append (кінець)
+
+// const item1 = document.querySelector("#item-name");
+// const item2 = document.querySelector("#item-price");
+
+// const item3 = document.querySelector("#start-btn");
+// const item4 = document.querySelector("#end-btn");
+
+// const item5 = document.querySelector("#items-list");
+
+// item3.addEventListener("click", () => {
+//   const newLiAf = document.createElement("li");
+//   newLiAf.textContent = `name: ${item1.value}, price: ${item2.value};`;
+//   item5.prepend(newLiAf);
+// });
+
+// item4.addEventListener("click", () => {
+//   const newLiBe = document.createElement("li");
+//   newLiBe.textContent = `name: ${item1.value}, price: ${item2.value};`;
+//   item5.append(newLiBe);
+// });
+
+//! Завдання 6: element.remove() - видалення
+// При кліку "Додати картку" - створюй div з текстом "Картка #N" та кнопкою "Видалити"
+// При кліку на "Видалити" - видаляй цю картку через element.remove()
+// Підказка: Використай event.target.parentElement.remove()
+
+const item1 = document.querySelector("#cards-container");
+
+const item2 = document.querySelector("#card-btn");
+
+item2.addEventListener("click", () => {
+  const newDiv = document.createElement("div");
+  item1.prepend(newDiv);
+
+  const newP = document.createElement("p");
+  newP.textContent = `New Card`;
+  newDiv.prepend(newP);
+
+  const newBtn = document.createElement("button");
+  newBtn.textContent = `X`;
+  newDiv.prepend(newBtn);
+
+  newBtn.addEventListener("click", () => {
+    newDiv.remove();
+  });
 });
+
+// item2.addEventListener("click", () => {
+//   item1.insertAdjacentHTML(
+//     "beforeend",
+//     `<div><p>New Card</p><button id="close">X</button></div>`
+//   );
+// });
