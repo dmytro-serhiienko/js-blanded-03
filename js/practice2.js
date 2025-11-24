@@ -1787,3 +1787,227 @@
 
 // Завдання: Відкривай/закривай модалку. Закривай при кліку поза вікном
 // (на темному фоні)
+
+// // open
+// const item1 = document.querySelector("#open-modal-btn");
+
+// const item2 = document.querySelector("#modal");
+
+// // close
+// const item3 = document.querySelector("#close-modal-btn");
+
+// // open
+// item1.addEventListener("click", () => {
+//   item2.classList.remove("hidden");
+// });
+
+// // close
+// item3.addEventListener("click", () => {
+//   item2.classList.add("hidden");
+// });
+
+// ! Завдання 1: querySelectorAll + forEach
+
+// Завдання: При кліку - знайди ВСІ < p > через querySelectorAll,
+//   перебери їх через forEach і додай клас highlight до кожного
+
+// const item1 = document.querySelector("#highlight-all-btn");
+
+// const item2 = document.querySelectorAll(".task p");
+
+// item1.addEventListener("click", () => {
+//   item2.forEach((cls) => cls.classList.add("highlight"));
+// });
+
+// console.log("🚀 ~ item2:", item2);
+
+// ! Завдання 2: textContent vs innerHTML
+
+// При кліку на "textContent" - встанови textContent = "<b>Жирний текст</b>"
+// (текст буде як є)
+
+// При кліку на "innerHTML" - встанови innerHTML = "<b>Жирний текст</b>"
+// (текст буде жирним)
+
+// const item1 = document.querySelector("#content-box");
+
+// const item2 = document.querySelector("#text-btn");
+// const item3 = document.querySelector("#html-btn");
+
+// item2.addEventListener("click", () => {
+//   item1.textContent = `<b>Жирний текст</b>`;
+// });
+
+// item3.addEventListener("click", () => {
+//   item1.innerHTML = `<b>Жирний текст</b>`;
+// });
+
+//*************** */ Завдання 3: element.style - зміна стилів
+// При зміні кольору (change на color-picker) -
+// змінюй element.style.background
+
+// При русі слайдера (input на size-slider) -
+// змінюй element.style.width і element.style.height
+
+// const item1 = document.querySelector("#style-box");
+
+// const item2 = document.querySelector("#color-picker");
+// const item3 = document.querySelector("#size-slider");
+
+// item2.addEventListener("change", () => {
+//   item1.style.background = item2.value;
+// });
+
+// item3.addEventListener("input", () => {
+//   item1.style.width = item3.value + "px";
+//   item1.style.height = item3.value + "px";
+// });
+
+// ! Завдання 4: classList.contains + classList.replace
+
+// При кліку "Схвалити" - перевір чи є клас status-pending
+// (classList.contains), якщо так - замініть на status-approved (classList.replace)
+
+// При кліку "Відхилити" - аналогічно на status-rejected
+
+// const item1 = document.querySelector("#status-box");
+
+// const item2 = document.querySelector("#approve-btn");
+// const item3 = document.querySelector("#reject-btn");
+
+// item2.addEventListener("click", () => {
+//   if (item1.classList.contains("status-pending")) {
+//     item1.classList.replace("status-pending", "status-approved");
+//   }
+// });
+
+// item3.addEventListener("click", () => {
+//   if (item1.classList.contains("status-pending")) {
+//     item1.classList.replace("status-pending", "status-rejected");
+//   }
+// });
+
+// ! Завдання 5: createElement + append + prepend
+// При кліку "зверху" - створи <li> через createElement,
+// встанови textContent і додай через prepend
+
+// При кліку "знизу" - так само, але через append
+
+// const item1 = document.querySelector("#task-input");
+
+// const item2 = document.querySelector("#top-btn");
+// const item3 = document.querySelector("#bottom-btn");
+
+// const item4 = document.querySelector("#task-list");
+
+//? var 1
+// item2.addEventListener("click", () => {
+//   item4.insertAdjacentHTML("afterbegin", `<li>${item1.value}</li>`);
+// });
+
+// item3.addEventListener("click", () => {
+//   item4.insertAdjacentHTML("beforeend", `<li>${item1.value}</li>`);
+// });
+
+// 1.	Створи елемент через document.createElement("li")
+// 2.	Присвой textContent = item1.value
+// 3.	Додай через parent.prepend(newLi)
+
+//********* */ ! Завдання 6: element.remove()
+// Знайди всі кнопки .delete-btn через querySelectorAll
+// На кожну повісь addEventListener
+// При кліку видаляй батьківський <li> через event.target.parentElement.remove()
+
+// const item1 = document.querySelectorAll("#delete-list li");
+// console.log("🚀 ~ item1:", item1);
+
+// const item2 = document.querySelectorAll(".delete-btn");
+
+// item2.forEach((el) => {
+//   el.addEventListener("click", (event) => {
+//     event.target.parentElement.remove(item1);
+//   });
+// });
+
+//! Завдання 7: insertAdjacentHTML
+
+// Завдання: Використай insertAdjacentHTML з різними позиціями:
+
+// beforebegin - перед елементом
+// afterend - після елемента
+// afterbegin - на початок всередині
+// beforeend - в кінець всередині
+
+// const item1 = document.querySelector("#insert-box");
+
+// const item2 = document.querySelector("#before-btn");
+// const item3 = document.querySelector("#after-btn");
+// const item4 = document.querySelector("#start-btn");
+// const item5 = document.querySelector("#end-btn");
+
+// item2.addEventListener("click", () => {
+//   item1.insertAdjacentHTML("beforebegin", `<p>beforbegin</p>`);
+// });
+
+// item3.addEventListener("click", () => {
+//   item1.insertAdjacentHTML("afterend", `<p>afterend</p>`);
+// });
+
+// item4.addEventListener("click", () => {
+//   item1.insertAdjacentHTML("afterbegin", `<p>afterbegin</p>`);
+// });
+
+// item5.addEventListener("click", () => {
+//   item1.insertAdjacentHTML("beforeend", `<p>beforeend</p>`);
+// });
+
+//! Завдання 8: Події input + change + focus + blur
+
+// На input - подія input - показуй кількість символів
+// На input - подія focus - додавай клас highlight
+// На input - подія blur - видаляй клас highlight
+// На select - подія change - показуй обрану країну
+
+// const item2 = document.querySelector("#username-input");
+
+// const item3 = document.querySelector("#char-count");
+
+// const item4 = document.querySelector("#country-select");
+
+// const item5 = document.querySelector("#selected-country");
+
+// item2.addEventListener("input", () => {
+//   item3.textContent = item2.value.length;
+// });
+
+// item2.addEventListener("focus", () => {
+//   item2.classList.add("highlight");
+// });
+
+// item2.addEventListener("blur", () => {
+//   item2.classList.remove("highlight");
+// });
+
+// item4.addEventListener("change", () => {
+//   item5.textContent = item4.value;
+// });
+
+//! Завдання 9: keydown - обробка клавіш
+
+// Повісь подію keydown на input
+// Якщо event.key === "Enter" - виведи "Ти натиснув Enter!"
+// Якщо event.key === "Escape" - очисти input (value = "")
+
+const item1 = document.querySelector("#keyboard-input");
+
+const item2 = document.querySelector("#key-message");
+
+item1.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    item2.textContent = `Ти натиснув Enter!`;
+  } else if (event.key === "Escape") {
+    item1.value = "";
+  } else {
+    item2.textContent = `Ти натиснув клавішу`;
+  }
+});
