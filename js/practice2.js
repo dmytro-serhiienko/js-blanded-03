@@ -2507,3 +2507,99 @@
 //   item3.classList.toggle("hidden");
 //   item4.classList.toggle("hidden");
 // });
+
+//! Завдання:
+// const numbers = [45, 12, 8, 33, 67, 2, 89, 15];
+
+// 1. Використайте toSorted() для сортування за зростанням
+// 2. Використайте toSorted() для сортування за спаданням
+// 3. Виведіть оригінальний масив і переконайтеся, що він не змінився
+// 4. Виведіть обидва відсортовані масиви
+
+// const searchToUp = numbers.toSorted((a, b) => a - b);
+
+// const searchToDown = numbers.toSorted((a, b) => b - a);
+
+//! Завдання 3: Сортування міст за населенням
+
+// const cities = [
+//   { name: "Київ", population: 2884000 },
+//   { name: "Харків", population: 1433000 },
+//   { name: "Одеса", population: 1010000 },
+//   { name: "Дніпро", population: 980000 },
+//   { name: "Львів", population: 721000 },
+//   { name: "Запоріжжя", population: 722000 },
+// ];
+
+// Завдання:
+// 1. Відсортуйте міста за назвою (алфавітно) використовуючи localeCompare('uk')
+// 2. Відсортуйте міста за населенням (від більшого до меншого)
+// 3. Відсортуйте міста за населенням (від меншого до більшого)
+// 4. Виведіть всі три результати
+
+// const searchTowns = cities.toSorted((a, b) => a.name.localeCompare(b.name));
+
+// const searchTownByCitizenDown = cities.toSorted((a, b) => {
+//   return b.population - a.population;
+// });
+
+// const searchTownByCitizenUp = cities.toSorted((a, b) => {
+//   return a.population - b.population;
+// });
+
+//! Завдання reduce:
+
+// const numbers = [5, 10, 15, 20, 25, 30];
+
+// // 1. Використайте reduce() щоб знайти суму всіх чисел
+// // 2. Використайте reduce() щоб знайти добуток всіх чисел
+// // 3. Знайдіть середнє арифметичне
+
+// const findNumber = numbers.reduce((accu, el) => {
+//   return accu + el;
+// }, 0);
+// console.log("🚀 ~ findNumber:", findNumber);
+
+// const multiNumber = numbers.reduce((accu, el) => {
+//   return accu * el;
+// }, 1);
+// console.log("🚀 ~ multiNumber:", multiNumber);
+
+// const averNumber =
+//   numbers.reduce((accu, el) => {
+//     return accu + el;
+//   }, 0) / numbers.length;
+// console.log("🚀 ~ averNumber:", averNumber);
+
+// ! Дано масив товарів у кошику
+const cart = [
+  { name: "Ноутбук", price: 25000, quantity: 1 },
+  { name: "Миша", price: 350, quantity: 2 },
+  { name: "Клавіатура", price: 1200, quantity: 1 },
+  { name: "Монітор", price: 8000, quantity: 2 },
+];
+
+// Завдання:
+// 1. Використайте reduce() щоб порахувати загальну вартість кошика
+//    (ціна * кількість для кожного товару)
+// 2. Порахуйте загальну кількість товарів
+// 3. Знайдіть найдорожчий товар (за одиницю)
+
+const totalPrice = cart.reduce((accu, el) => {
+  return accu + el.quantity * el.price;
+}, 0);
+console.log("🚀 ~ totalPrice:", totalPrice);
+
+const totalSum = cart.reduce((accu, el) => {
+  return accu + el.quantity;
+}, 0);
+console.log("🚀 ~ totalSum:", totalSum);
+
+const bigPrice = cart.reduce((accu, el) => {
+  if (el.price > accu) {
+    return accu;
+  }
+
+  return accu;
+});
+console.log("🚀 ~ bigPrice:", bigPrice);
