@@ -2412,11 +2412,11 @@
 // Позначати як виконані (перекреслення)
 // Видаляти задачі
 
-const item1 = document.querySelector("#taskInput");
+// const item1 = document.querySelector("#taskInput");
 
-const item2 = document.querySelector("#addBtn");
+// const item2 = document.querySelector("#addBtn");
 
-const item3 = document.querySelector("#taskList");
+// const item3 = document.querySelector("#taskList");
 
 //* var1
 // item2.addEventListener("click", () => {
@@ -2445,6 +2445,65 @@ const item3 = document.querySelector("#taskList");
 //   item1.value = "";
 // });
 
-//! Задачка 2: Фільтр товарів
-// Створіть список товарів з можливістю фільтрації по
-// категорії та пошуку по назві.
+// ! Пошук та зміна тексту
+
+// Знайдіть елемент з класом special і змініть його
+// textContent на "⭐ Банани - Акція!"
+// При натисканні на кнопку додайте клас highlight (створіть стиль для нього)
+
+// const item1 = document.querySelector("#task1 .product-list .special");
+// console.log("🚀 ~ item1:", item1);
+
+// item1.textContent = "⭐ Банани - Акція!";
+
+// const item2 = document.querySelector("#highlightBtn");
+
+// item2.addEventListener("click", () => {
+//   item1.classList.toggle("highlight");
+//   item1.style.fontSize = "20px";
+// });
+
+// ! Динамічне додавання елементів
+// При натисканні кнопки створіть новий <li> елемент зі значенням з input
+// Додайте його до списку за допомогою append()
+// Очистіть поле вводу після додавання
+
+// const btn = document.querySelector("#addTaskBtn");
+
+// const ulList = document.querySelector("#taskList");
+
+// const inpu = document.querySelector("#taskInput");
+
+// btn.addEventListener("clivck", () => {
+//   const newLi = document.createElement("li");
+//   newLi.textContent = inpu.value;
+//   ulList.append(newLi);
+
+//   inpu.value = "";
+// });
+
+// ! Перемикання класів
+// При натисканні "Перемкнути" використайте toggle() для класу
+// active на всіх картках
+
+// При натисканні "Сховати" додайте клас hidden до всіх карток
+
+// const item1 = document.querySelector("#toggleBtn");
+
+// const item2 = document.querySelector("#card1");
+// const item3 = document.querySelector("#card2");
+// const item4 = document.querySelector("#card3");
+
+// const item5 = document.querySelector("#hideBtn");
+
+// item1.addEventListener("click", () => {
+//   item2.classList.toggle("active");
+//   item3.classList.toggle("active");
+//   item4.classList.toggle("active");
+// });
+
+// item5.addEventListener("click", () => {
+//   item2.classList.toggle("hidden");
+//   item3.classList.toggle("hidden");
+//   item4.classList.toggle("hidden");
+// });
