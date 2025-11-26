@@ -2572,12 +2572,12 @@
 // console.log("🚀 ~ averNumber:", averNumber);
 
 // ! Дано масив товарів у кошику
-const cart = [
-  { name: "Ноутбук", price: 25000, quantity: 1 },
-  { name: "Миша", price: 350, quantity: 2 },
-  { name: "Клавіатура", price: 1200, quantity: 1 },
-  { name: "Монітор", price: 8000, quantity: 2 },
-];
+// const cart = [
+//   { name: "Ноутбук", price: 25000, quantity: 1 },
+//   { name: "Миша", price: 350, quantity: 2 },
+//   { name: "Клавіатура", price: 1200, quantity: 1 },
+//   { name: "Монітор", price: 8000, quantity: 2 },
+// ];
 
 // Завдання:
 // 1. Використайте reduce() щоб порахувати загальну вартість кошика
@@ -2585,21 +2585,21 @@ const cart = [
 // 2. Порахуйте загальну кількість товарів
 // 3. Знайдіть найдорожчий товар (за одиницю)
 
-const totalPrice = cart.reduce((accu, el) => {
-  return accu + el.quantity * el.price;
-}, 0);
-console.log("🚀 ~ totalPrice:", totalPrice);
+// const totalPrice = cart.reduce((accu, el) => {
+//   return accu + el.quantity * el.price;
+// }, 0);
+// console.log("🚀 ~ totalPrice:", totalPrice);
 
-const totalSum = cart.reduce((accu, el) => {
-  return accu + el.quantity;
-}, 0);
-console.log("🚀 ~ totalSum:", totalSum);
+// const totalSum = cart.reduce((accu, el) => {
+//   return accu + el.quantity;
+// }, 0);
+// console.log("🚀 ~ totalSum:", totalSum);
 
-const bigPrice = cart.reduce((accu, el) => {
-  if (el.price > accu) {
-    return accu;
-  }
+// const bigPrice = cart.reduce((accu, el) => {
+//   if (el.price > accu) {
+//     return accu;
+//   }
 
-  return accu;
-});
-console.log("🚀 ~ bigPrice:", bigPrice);
+//   return accu;
+// });
+// console.log("🚀 ~ bigPrice:", bigPrice);
