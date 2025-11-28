@@ -563,3 +563,314 @@ let counter = 0;
 //   item1.style.padding = event.target.value + "px";
 //   item55.textContent = event.target.value + "px";
 // });
+
+// !
+// const colors = ["червоний", "синій", "зелений", "жовтий"];
+// // Витягни перший і другий колір у змінні first та second
+
+// const [first, second] = colors;
+// console.log(first);
+// console.log(second);
+
+// !
+// const fruits = ["яблуко", "банан", "апельсин", "груша", "ківі"];
+// // Витягни перший фрукт окремо, а решту в окремий масив
+
+// const [first] = fruits;
+// console.log("🚀 ~ first:", first);
+
+// const [, ...rest] = fruits;
+// console.log("🚀 ~ rest:", rest);
+
+// !
+// let a = 5;
+// let b = 10;
+// // Поміняй значення місцями використовуючи деструктуризацію
+
+// [a, b] = [b, a];
+// console.log(a);
+// console.log(b);
+
+// !
+// const nested = [1, [2, 3], 4];
+// // Витягни всі числа в окремі змінні: one, two, three, four
+
+// // const [one] = nested;
+// // console.log("🚀 ~ one:", one);
+
+// // const [, [two]] = nested;
+// // console.log("🚀 ~ two:", two);
+
+// // const [, [, three]] = nested;
+// // console.log("🚀 ~ three:", three);
+
+// // const [, [,], four] = nested;
+// // console.log("🚀 ~ four:", four);
+
+// // *var2
+// const [one, [two, three], four] = nested;
+
+// console.log(one); // 1
+// console.log(two); // 2
+// console.log(three); // 3
+// console.log(four); // 4
+
+// !
+// Напиши функцію, яка приймає масив координат [x, y]
+// і повертає рядок "X: {x}, Y: {y}"
+
+// function foo([x, y]) {
+//   return `X: ${x}, Y: ${y}`;
+// }
+
+// const par = [5, 7];
+
+// console.log(foo(par));
+
+// !
+// const csvLine = "Іван,Петренко,25,Київ";
+// Розпарси рядок у змінні: firstName, lastName, age, city
+
+//* var1
+// const firstName = csvLine.slice(0, 4);
+// console.log("🚀 ~ firstName:", firstName);
+
+//* var2
+// const firstName = csvLine.split(",")[0];
+// console.log("🚀 ~ firstName:", firstName);
+
+// const firstName = csvLine.split(",")[1];
+// console.log("🚀 ~ firstName:", firstName);
+
+//* var3
+// const peredelka = csvLine.split(",");
+// // console.log("🚀 ~ firstName:", firstName);
+
+// const [firstName, lastName, age, city] = peredelka;
+
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+// console.log(city);
+
+// !
+// const queue = ["перший", "другий", "третій", "четвертий", "п'ятий"];
+// // Витягни перший, другий і останній елемент
+
+// const [first, second, , , five] = queue;
+
+// console.log(first);
+// console.log(second);
+// console.log(five);
+
+// !
+// const pairs = [
+//   [1, 2],
+//   [3, 4],
+//   [5, 6],
+// ];
+
+// for (const [a, b] of pairs) {
+//   console.log(a + b);
+// }
+
+// !
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+// // Витягни центральний елемент (5) в змінну center
+
+// const [[, ,], [, center], [, ,]] = matrix;
+
+// console.log(center);
+
+// const sum = center + 5;
+// console.log("🚀 ~ sum:", sum);
+
+// !
+// const scores = [95, 87, 92, 78, 88, 91];
+// // Витягни перші два та останні два результати, середні проігноруй
+
+// const [first, second, , , ...rest] = scores;
+
+// console.log("🚀 ~ first:", first);
+// console.log("🚀 ~ second:", second);
+// console.log("🚀 ~ rest:", rest);
+
+// const separ = rest.join(",");
+// console.log("🚀 ~ separ:", separ);
+
+// !
+// const randomNumbers = [Math.random(), Math.random(), Math.random()];
+// // Витягни перше число як 'random', решту як 'others'
+
+// const [random, ...others] = randomNumbers;
+// console.log("🚀 ~ random:", random);
+// console.log("🚀 ~ others:", others);
+
+// !
+// const fullName = "Тарас Григорович Шевченко".split(" ");
+// // Витягни ім'я, по батькові та прізвище в окремі змінні
+
+// const [name, fathername, surname] = fullName;
+// console.log("🚀 ~ name:", name);
+// console.log("🚀 ~ fathername:", fathername);
+// console.log("🚀 ~ surname:", surname);
+
+// !
+// const dateString = "2024-03-15";
+// const dateParts = dateString.split("-");
+// // Витягни рік, місяць і день в окремі змінні
+
+// const [year, mounth, date] = dateParts;
+// console.log("🚀 ~ date:", date);
+// console.log("🚀 ~ mounth:", mounth);
+// console.log("🚀 ~ year:", year);
+
+// ************************************************************************************* !
+// Задача 1: Магазин товарів
+// Створи масив об'єктів products з товарами (назва, ціна, категорія). Напиши функції:
+
+// filterByPrice(min, max) - фільтрує товари за ціною
+// getTotalPrice() - повертає загальну вартість усіх товарів
+// groupByCategory() - групує товари за категоріями (повертає об'єкт)
+
+// const products = [
+//   { name: "Ноутбук", price: 25000, category: "електроніка" },
+//   { name: "Миша", price: 500, category: "електроніка" },
+//   { name: "Книга", price: 200, category: "книги" },
+// ];
+
+// const minMax = products.toSorted((a, b) => {
+//   return a.price - b.price;
+// });
+// console.log("🚀 ~ minMax:", minMax);
+
+// const sum = products.reduce((accu, el) => {
+//   return accu + el.price;
+// }, 0);
+// console.log(`Загальна сума товарів - ${sum}`);
+
+// const cat = products.reduce((accu, el) => {
+//   if (!accu[el.category]) {
+//     accu[el.category] = [];
+//     accu[el.category].push(el);
+//   }
+//   return accu;
+// }, {});
+// console.log("🚀 ~ cat:", cat);
+
+//! При кліку на кнопку змініть текст заголовка на "Новий заголовок".
+
+// const btn = document.querySelector("#changeBtn");
+
+// const title = document.querySelector("#title");
+
+// btn.addEventListener("click", () => {
+//   title.textContent = "Новий заголовок";
+//   title.style.color = "green";
+// });
+
+//! Створіть три кнопки, які змінюють стиль тексту.
+
+// const text = document.querySelector("#text");
+
+// const btnRed = document.querySelector("#redBtn");
+// const btnBig = document.querySelector("#bigBtn");
+// const btnBolt = document.querySelector("#boldBtn");
+
+// btnRed.addEventListener("click", () => {
+//   text.style.color = "red";
+// });
+
+// btnBig.addEventListener("click", () => {
+//   text.style.fontSize = "20px";
+// });
+
+// btnBolt.addEventListener("click", () => {
+//   text.style.fontWeight = "700";
+// });
+
+//! Додайте HTML-код всередину контейнера при кліку на кнопку.
+
+// const box = document.querySelector("#container");
+
+// const btn = document.querySelector("#addBtn");
+
+// btn.addEventListener("click", () => {
+//   box.insertAdjacentHTML("beforeend", `<p>Привіт ! =)</p>`);
+// });
+
+//! Перемикач теми
+//! Перемикайте між світлою та темною темою.
+
+// const text = document.querySelector("#container p");
+
+// const btn = document.querySelector("#themeBtn");
+
+// btn.addEventListener("click", () => {
+//   text.classList.toggle("dark");
+// });
+
+//! Активний пункт меню
+//! При кліку на пункт меню зробіть його активним
+//! (інші - неактивні).
+
+// const menuList = document.querySelector("#menu");
+
+// const menuListItem = document.querySelectorAll(".menu-item");
+
+// window.addEventListener("click", (event) => {
+//   menuListItem.forEach((el) => {
+//     el.classList.remove("active");
+
+//     if (el === event.target) {
+//       el.classList.add("active");
+//     }
+//   });
+// });
+
+//! Показати/Сховати
+//! Створіть кнопку, яка показує/ховає текст.
+
+// const btn = document.querySelector("#toggleBtn");
+
+// const text = document.querySelector("#content");
+
+// btn.addEventListener("click", () => {
+//   text.classList.toggle("hidden");
+// });
+
+//! Додавання елементів у список
+//! Додайте новий пункт списку при кліку на кнопку.
+// Створіть новий <li> з текстом "Новий елемент"
+
+// const list = document.querySelector("#list");
+
+// const btn = document.querySelector("#addBtn");
+
+// btn.addEventListener("click", () => {
+//* var1
+// const newLi = document.createElement("li");
+// newLi.textContent = "Новий елемент";
+// list.append(newLi);
+
+//* var2
+// list.insertAdjacentHTML("beforeend", `<li>Новий елемент</li>`);
+// });
+
+//!************************************* Видалення елементів
+//! Додайте кнопку "Видалити" до кожного елемента списку.
+
+// const list = document.querySelector("#list li");
+
+// const btn = document.querySelectorAll(".deleteBtn");
+
+// window.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("deleteBtn")) {
+//     const li = event.target.closest("li");
+//     li.remove();
+//   }
+// });

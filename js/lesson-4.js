@@ -95,34 +95,34 @@
 // 6 символів то додати клас `success`. Якщо ж символів менше аніж 6,
 // то клас `error`
 
-const formEl = document.querySelector(".contact-form");
+// const formEl = document.querySelector(".contact-form");
 
-const inputEl = document.querySelector(".contact-form-input");
+// const inputEl = document.querySelector(".contact-form-input");
 
-formEl.addEventListener("input", (event) => {
-  inputEl.classList.remove("success", "error");
+// formEl.addEventListener("input", (event) => {
+//   inputEl.classList.remove("success", "error");
 
-  if (inputEl.value.length >= 6) {
-    inputEl.classList.add("success");
-  } else {
-    inputEl.classList.add("error");
-  }
-});
+//   if (inputEl.value.length >= 6) {
+//     inputEl.classList.add("success");
+//   } else {
+//     inputEl.classList.add("error");
+//   }
+// });
 
 // 2 - При події `focus` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
 // якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
-formEl.addEventListener(
-  "focus",
-  (event) => {
-    if (inputEl.value === "") {
-      event.target.style.outline = "3px solid red";
-    } else {
-      event.target.style.outline = "3px solid green";
-    }
-  },
-  true
-);
+// formEl.addEventListener(
+//   "focus",
+//   (event) => {
+//     if (inputEl.value === "") {
+//       event.target.style.outline = "3px solid red";
+//     } else {
+//       event.target.style.outline = "3px solid green";
+//     }
+//   },
+//   true
+// );
 
 // 3 - При події `blur` зроби перевірку на пустоту поля інпута,
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
