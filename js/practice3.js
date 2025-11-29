@@ -874,3 +874,195 @@ let counter = 0;
 //     li.remove();
 //   }
 // });
+
+//! Створіть простий TODO список з можливістю додавання
+//! та видалення завдань.
+
+// const input = document.querySelector("#todoInput");
+
+// const list = document.querySelector("#todoList");
+
+// const btn = document.querySelector("#addTodoBtn");
+
+// const newUl = document.createElement("ul");
+// list.append(newUl);
+
+// btn.addEventListener("click", () => {
+//   const newLi = document.createElement("li");
+//   newLi.textContent = input.value;
+//   newUl.append(newLi);
+
+//   input.value = "";
+
+//   window.addEventListener("click", (event) => {
+//     if (event.target === newLi) {
+//       newLi.remove();
+//     }
+//   });
+// });
+
+// ! Задача 10: Лічильник натискань
+// Підрахуйте кількість натискань на кнопку.
+
+// const btn = document.querySelector("#clickBtn");
+
+// const txt = document.querySelector("#counter");
+
+// let count = 0;
+
+// btn.addEventListener("click", (event) => {
+//   txt.textContent = ++count;
+// });
+
+//! Обробка submit форми
+//! Виведіть введені дані при відправці форми
+//! (заборонити перезавантаження сторінки).
+
+// const formEl = document.querySelector("#myForm");
+
+// const nameEl = document.querySelector("#nameInput");
+// const emailEl = document.querySelector("#emailInput");
+
+// formEl.addEventListener("submit", (event) => {
+//   event.preventDefault();
+
+//   console.log(nameEl.value);
+//   console.log(emailEl.value);
+
+//   nameEl.value = "";
+//   emailEl.value = "";
+// });
+
+//! Відображайте кількість символів у реальному часі.
+
+// const textEl = document.querySelector("#textArea");
+
+// const countEl = document.querySelector("#charCount");
+
+// textEl.addEventListener("input", (event) => {
+//   countEl.textContent = event.target.value.length;
+// });
+
+//! Focus і Blur
+//! Змініть стиль поля при фокусі та при втраті фокусу.
+// const inputEl = document.querySelector("#myInput");
+
+// inputEl.addEventListener("focus", () => {
+//   inputEl.classList.add("focused");
+// });
+
+// inputEl.addEventListener("blur", (event) => {
+//   inputEl.classList.remove("focused");
+// });
+
+//! Клавіша Enter
+//! При натисканні Enter в полі введення додайте текст до списку.
+
+// const inputEl = document.querySelector("#itemInput");
+
+// const listEl = document.querySelector("#itemList");
+
+// inputEl.addEventListener("keydown", (event) => {
+//   if (event.key === "Enter") {
+//     const newLi = document.createElement("li");
+
+//     listEl.append(newLi);
+//     newLi.textContent = event.target.value;
+//     inputEl.value = "";
+//   }
+// });
+
+// window.addEventListener("click", (event) => {
+//   const li = event.target.closest("li");
+//   li.remove();
+// });
+
+//! Випадаюче меню (change)
+//! Виведіть обраний варіант при зміні select.
+
+// const selectEl = document.querySelector("#citySelect");
+
+// selectEl.addEventListener("change", (event) => {
+//   console.log(event.target.value);
+// });
+
+//! Калькулятор
+//! Створіть простий калькулятор.
+
+// const num1 = document.querySelector("#num1");
+// const num2 = document.querySelector("#num2");
+
+// const operationEl = document.querySelector("#operation");
+
+// const btnGo = document.querySelector("#calculateBtn");
+
+// const resEL = document.querySelector("#result");
+
+// btnGo.addEventListener("click", () => {
+
+//   const a = Number(num1.value);
+//   const b = Number(num2.value);
+//   let result;
+
+// switch (operationEl.value) {
+//     case "+":
+//       result = a + b;
+//       break;
+//     case "-":
+//       result = a - b;
+//       break;
+//     case "*":
+//       result = a * b;
+//       break;
+//     case "/":
+//       result = b !== 0 ? a / b : "На 0 ділити не можна";
+//       break;
+//   }
+
+//   resEL.textContent = result;
+// });
+
+//! Фільтр списку
+//! Відфільтруйте список при введенні тексту.
+
+// const inputEl = document.querySelector("#searchInput");
+
+// const listFruit = document.querySelectorAll("#fruitList li");
+
+// inputEl.addEventListener("input", (event) => {
+//   listFruit.forEach((el) => {
+//     if (
+//       el.textContent.toLowerCase().includes(event.target.value.toLowerCase())
+//     ) {
+//       el.style.color = "green";
+//     } else {
+//       el.style.display = "none";
+//     }
+//   });
+// });
+
+// window.addEventListener("click", (event) => {
+//   if (!event.target.closest("#searchInput")) {
+//     inputEl.value = "";
+
+//     listFruit.forEach((el) => (el.style.display = ""));
+//   }
+// });
+
+
+
+//! Модальне вікно
+//! Створіть модальне вікно, яке відкривається та закривається.
+
+
+
+
+
+
+
+
+const = document.querySelector("#")
+const = document.querySelector("#")
+const = document.querySelector("#")
+const = document.querySelector("#")
+const = document.querySelector("#")

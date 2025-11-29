@@ -7,16 +7,23 @@
 
 //* Variant 1
 // const quad = numbers.reduce((accum, num) => {
-//   accum.push(num * num);
+//   accum.push(num ** 2);
 //   return accum;
 // }, []);
 // console.log("🚀 ~ quad:", quad);
 
 //* Variant 2
 // const quad = numbers.map((num) => {
-//   return num * num;
+//   return num ** 2;
 // });
 // console.log("🚀 ~ quad:", quad);
+
+//* Variant 3
+// const getDoubleNumbers = (array) => array.map((el) => el ** 2);
+
+// console.log(getDoubleNumbers(numbers));
+// console.log(getDoubleNumbers([2, 4, 6, 8]));
+// console.log(getDoubleNumbers([10, 20, 30]));
 
 //? Завдання 2:
 // Дано масив об'єктів. Створіть новий масив, що містить всі значення
@@ -107,11 +114,11 @@
 // const checker = numbers.find((num) => num % 2 !== 0);
 // console.log("🚀 ~ checker:", checker);
 
-//* Variant 2 всі не парні
+//* Variant 2
 // const checker = numbers.filter((num) => num % 2 !== 0);
 // console.log("🚀 ~ checker:", checker);
 
-//* Variant 2
+//* Variant 3
 // function checker() {
 //   for (const el of numbers) {
 //     if (el % 2 !== 0) {
@@ -120,6 +127,10 @@
 //   }
 // }
 // console.log("🚀 ~ checker ~ checker:", checker(numbers));
+
+//* Variant 4
+// const checker = (array) => array.find((num) => num % 2 !== 0);
+// console.log(checker(numbers));
 
 //? Завдання 6:
 // Відсортуйте масив чисел [4, 2, 5, 1, 3]
@@ -136,6 +147,10 @@
 // console.log("🚀 ~ normalize:", normalize);
 // console.log("🚀 ~ numbersArray:", numbersArray);
 
+//* Variant 3
+// const normalizer = (array) => array.toSorted((a, b) => a - b);
+// console.log(normalizer(numbersArray));
+
 // ?Завдання 7:
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"]
 //  у порядку алфавіту.
@@ -147,16 +162,19 @@
 // const normalaizer = stringArray.toSorted((a, b) => a.localeCompare(b));
 // console.log("🚀 ~ normalaizer:", normalaizer);
 
-// ?Завдання 8:
+//* Variant 2
+// const normalizer = (array) => array.toSorted((a, b) => a.localeCompare(b));
+// console.log(normalizer(stringArray));
 
+// ?Завдання 8:
 //  Відсортуйте масив об'єктів за віком у порядку зростання.
 // Очікуваний результат: [{name: "Bob", age: 19}, {name: "John", age: 27}, {name: "Jane", age: 31}].
 
-// const users = [
-//   { name: "John", age: 27 },
-//   { name: "Jane", age: 31 },
-//   { name: "Bob", age: 19 },
-// ];
+const users = [
+  { name: "John", age: 27 },
+  { name: "Jane", age: 31 },
+  { name: "Bob", age: 19 },
+];
 
 //* Variant 1
 // const normalaizerAge = users.toSorted((a, b) => a.age - b.age);
@@ -166,6 +184,10 @@
 // const normalaizerAge = users.sort((a, b) => a.age - b.age);
 // console.log("🚀 ~ normalaizerAge:", normalaizerAge);
 // console.log("🚀 ~ users:", users);
+
+//* Variant 3
+// const normalizerAge = (array) => array.toSorted((a, b) => a.age - b.age);
+// console.log(normalizerAge(users));
 
 // ?Завдання 9:
 // Дано масив об'єктів.
@@ -186,7 +208,7 @@
 //   }
 //   return accum;
 // }, []);
-// console.log("🚀 ~ newArray:", newArray);
+// console.table(newArray);
 
 //* Variant 2
 // const newArray = user.filter((age) => age.age > 20);
@@ -205,6 +227,10 @@
 // }
 // console.log("🚀 ~ newArray ~ newArray:", newArray());
 
+//* Variant 4
+// const newArray = (array) => array.filter((age) => age.age > 20);
+// console.log(newArray(user));
+
 // ?Завдання 10:
 // Дано масив чисел [1, 2, 3, 4, 5].
 // Застосуйте метод для обчислення суми елементів масиву.
@@ -214,19 +240,26 @@ const numbers = [1, 2, 3, 4, 5];
 //* Variant 1
 // const total = numbers.reduce((accum, num) => {
 //   return accum + num;
-// });
-// console.log("🚀 ~ total:", total);
+// }, 0);
 
 //* Variant 2
 // function total() {
 //   let result = 0;
 
 //   for (const number of numbers) {
-//     result = result + number;
+//     result += number;
 //   }
 //   return result;
 // }
 // console.log("🚀 ~ total ~ total:", total(numbers));
+
+//* Variant 3
+// const total = (array) =>
+//   array.reduce((accum, num) => {
+//     return accum + num;
+//   },0);
+
+// console.log(total(numbers));
 
 // ?Завдання 11:
 // Розроби клас Calculator, який дозволяє виконувати арифметичні
@@ -255,6 +288,10 @@ const numbers = [1, 2, 3, 4, 5];
 // Об'єкт класу може проводити послідовні операції у вигляді ланцюжка
 
 // class Calculator {
+//   constructor() {
+//     this.num = 0;
+//   }
+
 //   number(value) {
 //     this.value = value;
 //     return this;
@@ -276,6 +313,10 @@ const numbers = [1, 2, 3, 4, 5];
 //   }
 
 //   divide(num) {
+//     if (this.value === 0) {
+//       return alarm(`Помилка`);
+//     }
+
 //     this.value /= num;
 //     return this;
 //   }
@@ -284,19 +325,17 @@ const numbers = [1, 2, 3, 4, 5];
 //     return this.value;
 //   }
 // }
-
-// // Приклад використання:
 // const calc = new Calculator();
 
 // const result = calc
-//   .number(10) // Встановлюємо початкове значення 10
-//   .add(5) // Додаємо 5 (10 + 5 = 15)
-//   .substract(3) // Віднімаємо 3 (15 - 3 = 12)
-//   .multiply(4) // Множимо на 4 (12 * 4 = 48)
-//   .divide(2) // Ділимо на 2 (48 / 2 = 24)
-//   .getResult(); // Отримуємо результат: 24
+//   .number(10)
+//   .add(5)
+//   .substract(3)
+//   .multiply(4)
+//   .divide(2)
+//   .getResult();
 
-// console.log(result); // 24
+// console.log(result);
 
 //? Завдання 12:
 // Напиши клас Client який створює об'єкт з властивостями login email.
@@ -332,7 +371,8 @@ const numbers = [1, 2, 3, 4, 5];
 // const client2 = new Client("Petro", "petro@mail.com");
 // // console.log("🚀 ~ client2:", client2);
 // console.log(client2.getInfo);
-// *
+
+// // *
 // class Worker {
 //   #name;
 //   #surname;
@@ -374,7 +414,6 @@ const numbers = [1, 2, 3, 4, 5];
 // }
 
 // const worker = new Worker("Bob", "Maquin", 31);
-// console.log("🚀 ~ worker:", worker);
 
 // worker.position = "Sales Manager";
 // worker.department = "Electronic";
@@ -383,9 +422,6 @@ const numbers = [1, 2, 3, 4, 5];
 // console.log(worker.allInfo);
 
 // console.log(worker.workPosition);
-
-// // сеттер тільки для приватних ?
-// // порядок виводу інфо
 
 // ?Завдання 13:
 //  Наслідування у класах!
@@ -405,38 +441,38 @@ const numbers = [1, 2, 3, 4, 5];
 //  - department - відділ, в якому працює співробітник.
 // Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який повертає об'єкт з зарплатою співробітника та відділом, в якому він працює.
 
-// class Person {
-//   constructor(name, age, gender, email) {
-//     this.name = name;
-//     this.age = age;
-//     this.gender = gender;
-//     this.email = email;
-//   }
+class Person {
+  constructor(name, age, gender, email) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.email = email;
+  }
 
-//   getDetails() {
-//     return `Name: ${this.name}; Age: ${this.age}; Gender: ${this.gender}; Email: ${this.email};`;
-//   }
-// }
+  getDetails() {
+    return `Name: ${this.name}; Age: ${this.age}; Gender: ${this.gender}; Email: ${this.email};`;
+  }
+}
 
-// class Employee extends Person {
-//   constructor(name, age, gender, email, salary, department) {
-//     super(name, age, gender, email);
-//     this.salary = salary;
-//     this.department = department;
-//   }
+class Employee extends Person {
+  constructor(name, age, gender, email, salary, department) {
+    super(name, age, gender, email);
+    this.salary = salary;
+    this.department = department;
+  }
 
-//   getEmployeeDetails() {
-//     return `Salary: ${this.salary}$; Department: ${this.department};`;
-//   }
-// }
+  getEmployeeDetails() {
+    return `Salary: ${this.salary}$; Department: ${this.department};`;
+  }
+}
 
-// const person1 = new Person("John", 31, "male", "john@mail.com");
-// // console.log("🚀 ~ person1:", person1);
-// // console.log(person1.getDetails());
+const person1 = new Person("John", 31, "male", "john@mail.com");
+// console.log("🚀 ~ person1:", person1);
+// console.log(person1.getDetails());
 
-// // prettier-ignore
-// const employee = new Employee("Bob", 41, "male", "bob@gmail.com", 5500, "Director");
-// console.log(employee.getDetails());
-// console.log(employee.getEmployeeDetails());
+// prettier-ignore
+const employee = new Employee("Bob", 41, "male", "bob@gmail.com", 5500, "Director");
+console.log(employee.getDetails());
+console.log(employee.getEmployeeDetails());
 
-// console.log(employee.getDetails() + employee.getEmployeeDetails());
+console.log(employee.getDetails() + employee.getEmployeeDetails());
