@@ -1049,20 +1049,75 @@ let counter = 0;
 //   }
 // });
 
-
-
 //! Модальне вікно
 //! Створіть модальне вікно, яке відкривається та закривається.
 
+// const btnOpen = document.querySelector("#openModal");
 
+// const btnClose = document.querySelector(".close");
+// const modalContent = document.querySelector(".modal-content");
 
+// const modalWindow = document.querySelector("#modal");
 
+// btnOpen.addEventListener("click", () => {
+//   modalWindow.classList.remove("modal");
+// });
 
+// btnClose.addEventListener("click", () => {
+//   modalWindow.classList.add("modal");
+// });
 
+//! Лічильник
 
+// const countEl = document.querySelector("#count");
 
-const = document.querySelector("#")
-const = document.querySelector("#")
-const = document.querySelector("#")
-const = document.querySelector("#")
-const = document.querySelector("#")
+// const btnEl = document.querySelector("#btn");
+
+// let count = 0;
+
+// btnEl.addEventListener("click", () => {
+//   countEl.textContent = ++count;
+// });
+
+//! Список справ (To-Do)
+
+// const inputEl = document.querySelector("#taskInput");
+
+// const btnEl = document.querySelector("#addBtn");
+
+// const listEl = document.querySelector("#taskList");
+
+// btnEl.addEventListener("click", () => {
+//   if (inputEl.value.length >= 3) {
+//     const newLi = document.createElement("li");
+//     newLi.textContent = inputEl.value;
+//     listEl.append(newLi);
+//   }
+//   inputEl.value = "";
+// });
+
+// window.addEventListener("click", (event) => {
+//   if (event.target.tagName === "LI") {
+//     event.target.remove();
+//   }
+// });
+
+// inputEl.addEventListener("keydown", (event) => {
+//   if (event.key === "Enter") {
+//     const newLi = document.createElement("li");
+//     newLi.textContent = inputEl.value;
+//     listEl.append(newLi);
+//     inputEl.value = "";
+//   }
+// });
+
+//! Показати/Сховати текст
+//! Створи кнопку, яка показує або ховає текст.
+
+const btnEl = document.querySelector("#toggleBtn");
+
+const textEl = document.querySelector("#text");
+
+btnEl.addEventListener("click", () => {
+  textEl.style.display = "block";
+});
