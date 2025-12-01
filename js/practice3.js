@@ -1114,10 +1114,421 @@ let counter = 0;
 //! Показати/Сховати текст
 //! Створи кнопку, яка показує або ховає текст.
 
-const btnEl = document.querySelector("#toggleBtn");
+// const btnEl = document.querySelector("#toggleBtn");
 
-const textEl = document.querySelector("#text");
+// const textEl = document.querySelector("#text");
 
-btnEl.addEventListener("click", () => {
-  textEl.style.display = "block";
-});
+// btnEl.addEventListener("click", () => {
+//   textEl.style.display = "block";
+// });
+
+//! Перемикач теми (світла/темна)
+
+// const btnEl = document.querySelector("#themeBtn");
+
+// const boxEl = document.querySelector("#content");
+
+// const body = document.body;
+
+// btnEl.addEventListener("mousemove", () => {
+//   // boxEl.style.background = "#292929";
+//   // boxEl.style.color = "#fff";
+//   // btnEl.style.background = "#292929";
+//   // btnEl.style.color = "#fff";
+
+//   body.style.background = "#292929";
+//   body.style.color = "#fff";
+// });
+
+//! Слайдер зображень
+//! Створи простий слайдер для перегляду зображень.
+
+// const image = [
+//   "https://via.placeholder.com/400x300/FF5733/fff?text=Slide+1",
+//   "https://via.placeholder.com/400x300/33C1FF/fff?text=Slide+2",
+//   "https://via.placeholder.com/400x300/75FF33/fff?text=Slide+3",
+// ];
+
+// let currentIndex = 0;
+
+// const slideImg = document.querySelector("#slideImg");
+// const slideNumEl = document.querySelector("#slideNum");
+// const nextBtn = document.querySelector("#nextBtn");
+// const prevBtn = document.querySelector("#prevBtn");
+
+// function updateSlide() {
+//   slideImg.src = image[currentIndex];
+//   slideNumEl.textContent = currentIndex + 1;
+// }
+
+// nextBtn.addEventListener("click", () => {
+//   currentIndex++;
+//   if (currentIndex >= image.length) {
+//     currentIndex = 0;
+//   }
+//   updateSlide();
+// });
+
+// prevBtn.addEventListener("click", () => {
+//   currentIndex--;
+//   if (currentIndex < 0) {
+//     currentIndex = image.length - 1;
+//   }
+//   updateSlide();
+// });
+
+// ! Destryktyruzacia
+
+// const user = { name: "Dmytro", lastname: "Serhiienko" };
+
+// const nameEl = document.querySelector("#firstName");
+// const lastEl = document.querySelector("#lastName");
+
+// const btnEl = document.querySelector("#btn1");
+
+// btnEl.addEventListener("click", () => {
+//   const { name, lastname } = user;
+
+//   nameEl.textContent = name;
+//   lastEl.textContent = lastname;
+// });
+
+//! Колір та розмір
+//! Отримай колір та розмір з об'єкта.
+
+// const colors = { color: "green", size: "20px" };
+
+// const colorEl = document.querySelector("#color");
+// const sizeEl = document.querySelector("#size");
+
+// const btnEl = document.querySelector("#btn2");
+
+// btnEl.addEventListener("click", () => {
+//   const { color, size } = colors;
+
+//   colorEl.textContent = color;
+//   sizeEl.textContent = size;
+// });
+
+//! Три числа
+//! Виведи три числа з масиву.
+
+// const numbers = [3, 5, 9];
+
+// const num1El = document.querySelector("#n1");
+// const num2El = document.querySelector("#n2");
+// const num3El = document.querySelector("#n3");
+
+// const btnEl = document.querySelector("#btn3");
+
+// btnEl.addEventListener("click", () => {
+//   const [first, second, three] = numbers;
+
+//   num1El.textContent = first;
+//   num2El.textContent = second;
+//   num3El.textContent = three;
+// });
+
+//! Ім'я та вік
+//! Витягни ім'я та вік з об'єкта людини.
+
+// const person = { name: "Dmytro", personal: { age: 33 } };
+
+// const nameEl = document.querySelector("#name");
+// const ageEl = document.querySelector("#age");
+
+// const btnEl = document.querySelector("#btn4");
+
+// btnEl.addEventListener("click", () => {
+//   const {
+//     name,
+//     personal: { age },
+//   } = person;
+
+//   nameEl.textContent = name;
+//   ageEl.textContent = age;
+// });
+
+//! Перше та друге місце
+//! Виведи перші два елементи з масиву переможців.
+
+// const medal = { gold: "Dmytro", silver: "Lana" };
+
+// const jsonEl = JSON.stringify(medal);
+// console.log("🚀 ~ jsonEl:", jsonEl);
+
+// const goldEl = document.querySelector("#gold");
+// const silverEl = document.querySelector("#silver");
+
+// const btnEl = document.querySelector("#btn5");
+
+// btnEl.addEventListener("click", () => {
+//   const { gold, silver } = medal;
+
+//   goldEl.textContent = gold;
+//   silverEl.textContent = silver;
+// });
+
+//! Решта масиву (rest)
+//! Виведи перший елемент окремо, а решту - разом.
+
+// const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// const mainEl = document.querySelector("#main");
+// const othersEl = document.querySelector("#others");
+
+// const btnEl = document.querySelector("#btn10");
+
+// btnEl.addEventListener("click", () => {
+//   const [first, , , , ...rest] = num;
+
+//   mainEl.textContent = first;
+//   othersEl.textContent = rest;
+// });
+
+// Задача 1: Створення профілю користувача
+// Створи JSON-об'єкт, який описує профіль користувача з такими полями:
+
+// ім'я
+// вік
+// email
+// чи є студентом (boolean)
+// список хобі (масив)
+
+// !  JSON
+// const user = {
+//   name: "Dmytro",
+//   age: 33,
+//   email: "dima@gmail.com",
+//   ifStudent: true,
+//   hobby: "tecnologies",
+// };
+
+// const toJson = JSON.stringify(user);
+// console.log("🚀 ~ toJson:", toJson);
+
+// const fromJson = JSON.parse(toJson);
+// console.log("🚀 ~ fromJson:", fromJson);
+// console.log(fromJson.name);
+
+//! Завдання 1 — Просте серіалізування
+
+// Створи об’єкт book з полями:
+// 	•	title (рядок)
+// 	•	author (рядок)
+// 	•	year (число)
+// 	•	isAvailable (булеве значення)
+
+// Потім:
+// 	1.	Перетвори його в JSON рядок.
+// 	2.	Виведи цей рядок у консоль.
+
+// const book = {
+//   title: "My book",
+//   author: "Dima",
+//   year: 2025,
+//   isAvailable: true,
+// };
+
+// const toJson = JSON.stringify(book);
+// console.log("🚀 ~ toJson:", toJson);
+
+// const toJs = JSON.parse(toJson);
+// console.log("🚀 ~ toJs:", toJs);
+
+//! Використай JSON рядок:
+
+// const jsonInfo = '{"name":"Anna","age":25,"city":"Kyiv"}';
+
+// const toJs = JSON.parse(jsonInfo);
+// console.log("🚀 ~ toJs:", toJs);
+
+// console.log(toJs.name, toJs.city);
+
+//! Завдання 3 — Масив об’єктів
+
+// Створи масив students, де буде 3 об’єкти студентів, кожен з полями:
+// 	•	name
+// 	•	age
+// 	•	isEnrolled
+
+// 	1.	Перетвори масив у JSON рядок.
+// 	2.	Потім розпарсь цей рядок назад в масив об’єктів.
+// 	3.	Виведи в консоль імена всіх студентів, які навчаються (isEnrolled === true).
+
+// const students = [
+//   { name: "Dmytro", age: 33, isEnrolled: true },
+//   { name: "Lana", age: 30, isEnrolled: true },
+//   { name: "Bob", age: 31, isEnrolled: true },
+// ];
+
+// const toJson = JSON.stringify(students);
+// console.log("🚀 ~ toJson:", toJson);
+
+// const toJs = JSON.parse(toJson);
+// console.log("🚀 ~ toJs:", toJs);
+
+// console.log(toJs, "isEnrolled: true");
+
+// ! Завдання 4 — Форматований JSON
+
+// Створи об’єкт movie з полями:
+// 	•	title
+// 	•	director
+// 	•	year
+// 	•	genres (масив жанрів)
+
+// 	1.	Перетвори його в гарно відформатований JSON з відступом у 2 пробіли.
+// 	2.	Виведи результат у консоль.
+
+// const movie = {
+//   title: "The Last",
+//   director: "Bob",
+//   year: 2022,
+//   genres: ["fantastic", "horror"],
+// };
+
+// const toJson = JSON.stringify(movie, null, 2);
+// console.log("🚀 ~ toJson:", toJson);
+
+//! Парсинг і доступ до даних
+// 1.	Перетвори JSON у об’єкт
+// 2.	Виведи в консоль:
+// •	назву продукту
+// •	чи є в наявності (inStock)
+
+// const jsonStr = '{"product":"Laptop","price":1500,"inStock":false}';
+
+// const toJs = JSON.parse(jsonStr);
+// console.log(toJs.product, toJs.inStock);
+
+//! Завдання 2 — Масив у JSON
+
+// Створи масив із 4 чисел і:
+// 	1.	Перетвори його в JSON рядок
+// 	2.	Виведи в консоль тип результату (typeof ...)
+
+// const numbers = [1, 2, 3, 4];
+
+// const toJson = JSON.stringify(numbers);
+// console.log(typeof toJson);
+
+//! Завдання 3 — Фільтрація після парсингу
+
+// const usersJson =
+//   '[{"name":"Mia","age":20},{"name":"Max","age":30},{"name":"Liza","age":25}]';
+
+// // 1.	Розпарсь його у масив об’єктів
+// // 2.	Виведи в консоль лише тих, хто старше 21 року
+
+// const toJs = JSON.parse(usersJson).filter((el) => el.age > 21);
+// console.log("🚀 ~ toJs:", toJs);
+
+//!  Завдання 4 — Складний об’єкт
+
+// Створи об’єкт company:
+// 	•	name
+// 	•	employees — масив об’єктів з name і department
+// 	•	isActive — булеве значення
+
+// 	1.	Перетвори в JSON
+// 	2.	Виведи у консоль
+// 	3.	Потім розпарсь назад і виведи список імен працівників
+
+// const company = {
+//   name: "Pipper",
+//   employees: [
+//     { name: "Bob", department: "IT" },
+//     { name: "Rebeca", department: "Sales" },
+//     { name: "Mango", department: "Promotion" },
+//   ],
+//   isActive: true,
+// };
+
+// const toJson = JSON.stringify(company, null, 2);
+// console.log("🚀 ~ toJson:", toJson);
+
+// const toJs = JSON.parse(toJson);
+
+// const {
+//   employees: [{ name: n1 }, { name: n2 }, { name: n3 }],
+// } = toJs;
+// console.log(n1, n2, n3);
+
+//! Завдання 5 — Красиве форматування
+
+// // Створи об’єкт recipe:
+// // 	•	назва
+// // 	•	час приготування
+// // 	•	інгредієнти — масив
+// // 	•	вид (наприклад: десерт, основна страва)
+
+// // Перетвори в JSON із відступами 4 пробіли
+// // і виведи результат у консоль.
+
+// const recipe = {
+//   name: "Cake",
+//   time: 3,
+//   ingridients: ["flower", "sugar", "milk", "almonds"],
+//   tipe: "desert",
+// };
+
+// const toJson = JSON.stringify(recipe, null, 4);
+// console.log("🚀 ~ toJson:", toJson);
+
+//! Практичні задачі з try…catch
+// Спробуй розпарсити його через try…catch.
+// У разі помилки — виведи "Error parsing JSON".
+
+// const data = '{"title":"Avatar","rating":9}';
+
+// try {
+//   const toJs = JSON.parse(data);
+// } catch (error) {
+//   console.log("Error parsing JSON");
+//   console.log(error.name);
+//   console.log(error.message);
+// }
+
+//! Завдання 3
+
+// Створи функцію safeParse(jsonText):
+// 	•	всередині використовуй try…catch
+// 	•	якщо JSON правильний → повертає об’єкт
+// 	•	якщо ні → повертає null
+
+// function safeParse(jsonText) {
+//   try {
+//     return JSON.parse(jsonText);
+//   } catch (error) {
+//     return null;
+//   }
+// }
+
+// console.log(safeParse('{"a":1}')); // ✔ об'єкт
+// console.log(safeParse("{a:1}")); // ❌ null
+
+// Завдання 4 — Комбо
+// 	1.	Створи об’єкт з мінімум 4 полями
+// 	2.	Перетвори у JSON
+// 	3.	Навмисно поламай JSON (видали лапки)
+// 	4.	Пропусти через JSON.parse() з try…catch
+// 	5.	В catch виведи щось типу:
+// ("⚠ JSON is not valid!");
+
+const team = [
+  { name: "Bob", age: 22 },
+  { name: "Tesla", age: 33 },
+  { name: "Rebeca", age: 24 },
+  { name: "Latina", age: 26 },
+];
+
+const toJson = JSON.stringify(team, null, 1);
+// console.log("🚀 ~ toJson:", toJson);
+
+try {
+  const toJs = JSON.parse(toJson);
+} catch (error) {
+  console.log("⚠ JSON is not valid!");
+  console.log(error.name);
+}
