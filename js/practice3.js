@@ -2750,5 +2750,363 @@ let contactList = JSON.parse(localStorage.getItem("storage")) || [];
 // console.log(textTransform("world")); // "World"
 
 // 	!13.	Функція приймає масив і повертає новий масив без дублюючих значень.
-// 	!14.	Функція приймає рядок — перевір, чи він паліндром.
+// const masive = [1, 2, 3, 1, 2, 3];
+// const organaizer = masive.reduce((accum, el) => {
+//   if (!accum.includes(el)) {
+//     return accum + el;
+//   }
+//   return accum;
+// }, []);
+// console.log("🚀 ~ organaizer:", organaizer);
+
 // 	!15.	Функція приймає число — поверни суму цифр цього числа.
+// function sum(num) {
+//   let numbers = String(num).split("");
+
+//   let result = numbers.reduce((acc, el) => {
+//     return acc + Number(el);
+//   }, 0);
+//   return result;
+// }
+
+// console.log(sum(55));
+// console.log(sum(543));
+// console.log(sum(222));
+
+//! 🟨 Задачі на події (DOM Events)
+// 	16.	При натисканні на кнопку змінюй текст заголовка на “Натиснуто!”.
+// btn.addEventListener("click", () => {
+//   title.textContent = "“Натиснуто";
+// });
+
+//! ✅ Задача 1. Перевірка валідного JSON
+
+// Умова:
+// Напиши функцію, яка приймає рядок.
+// Спробуй розпарсити його через JSON.parse().
+// 	•	Якщо JSON валідний — поверни об’єкт.
+// 	•	Якщо не валідний — поверни повідомлення: "Invalid JSON".
+
+// function parseJSON(params) {
+//   try {
+//     return JSON.parse(params);
+//   } catch (error) {
+//     return `Error`;
+//   }
+// }
+
+// console.log(parseJSON('{"name": "Dmytro"}'));
+// console.log(parseJSON("{name: Dmytro}"));
+
+// !✅ Задача 3. Додавання даних у JSON
+// const ok = [
+//   { title: "Phone", price: 500 },
+//   { title: "Laptop", price: 1500 },
+// ];
+
+// Треба:
+// 	1.	Розпарсити JSON.
+// 	2.	Додати новий товар (назву і ціну передає користувач).
+// 	3.	Повернути JSON назад у рядку.
+
+// const toJSON = JSON.stringify(ok, null, 2);
+// console.log("🚀 ~ toJSON:", toJSON);
+
+// const toJs = JSON.parse(toJSON);
+// console.log("🚀 ~ toJs:", toJs);
+
+// const newTitle = "Tablet";
+// const newPrice = 1999;
+
+// toJs.push({ title: newTitle, price: newPrice });
+
+// console.log("🚀 ~ toJs:", toJs);
+
+// const toJSON2 = JSON.stringify(toJs, null, 2);
+// console.log("🚀 ~ toJSON2:", toJSON2);
+
+// ✅ Задача 1. Показати текст при кліку
+
+// const item1 = document.querySelector("#showBtn");
+// const item2 = document.querySelector("#text");
+
+// item1.addEventListener("click", () => {
+//   item2.style.display = "block";
+//   item2.style.color = "blue";
+// });
+
+// ! Збільшувати число в <span> щоразу, коли натискають кнопку.
+// const item1 = document.querySelector("#countBtn");
+// const item2 = document.querySelector("#counter");
+
+// let counter = 0;
+
+// item1.addEventListener("click", () => {
+//   ++counter;
+//   item2.textContent = counter;
+// });
+
+//! ✅ Задача 3. Перевірка інпута при blur
+// Коли користувач покинув поле (blur):
+// 	•	якщо порожнє → показати "Поле не може бути порожнім"
+// 	•	якщо не порожнє → очистити помилку
+
+// const item1 = document.querySelector("#nameInput");
+// const item2 = document.querySelector("#error");
+
+// item1.addEventListener("blur", (event) => {
+//   if (event.target.value.length === 0) {
+//     item2.textContent = `Поле не може бути порожнім`;
+//   } else {
+//     item2.textContent = "";
+//   }
+// });
+
+//! ✅ Задача 5. Жива валідація Email
+// При введенні (input) перевірити:
+// 	•	якщо містить @ → зелений текст: “OK”
+// 	•	якщо ні → червоний текст: “Невірний email”
+
+// const item1 = document.querySelector("#emailInput");
+// const item2 = document.querySelector("#emailMsg");
+
+// item1.addEventListener("input", (event) => {
+//   if (event.target.value.includes("@")) {
+//     item2.textContent = "OK";
+//     item2.style.color = "green";
+//   } else {
+//     item2.textContent = "Невірний email";
+//     item2.style.color = "red";
+//   }
+// });
+
+//! ✅ Задача 6. Перемикач теми
+// При кліку:
+// 	•	якщо фон білий → зробити чорним, текст білим
+// 	•	якщо чорний → змінити назад на білий
+
+// const item1 = document.querySelector("#themeBtn");
+// const item2 = document.querySelector("#content");
+
+// item1.addEventListener("click", () => {
+//   document.body.classList.toggle("dark");
+// });
+
+//! ✅ Задача 7. Відкрити/закрити меню
+// const item1 = document.querySelector("#menuBtn");
+// const item2 = document.querySelector("#menu");
+
+// item1.addEventListener("click", () => {
+//   item2.style.display = "block";
+// });
+
+//!  Задача 8. Блокування кнопки, поки не поставлено галочку
+// const item1 = document.querySelector("#agree");
+// const item2 = document.querySelector("#submitBtn");
+
+// item1.addEventListener("click", () => {
+//   if (item1.checked) {
+//     item2.removeAttribute("disabled");
+//   } else {
+//     item2.setAttribute("disabled", true);
+//   }
+// });
+
+//! 🔥 Задача 9. Підрахунок символів у textarea
+
+// const item1 = document.querySelector("#textArea");
+// const item2 = document.querySelector("#charCount");
+
+// item1.addEventListener("input", (event) => {
+//   const text = event.target.value.trim();
+
+//   item2.textContent = text.length;
+// });
+
+//! 🔥 Задача 10. Активне поле виділяється рамкою
+// const item1 = document.querySelectorAll(".field");
+
+// item1.forEach((el) => {
+//   el.addEventListener("focus", () => {
+//     el.style.outline = "2px solid yellow";
+//     el.style.border = "2px solid tomato";
+//   });
+
+//   el.addEventListener("blur", () => {
+//     el.style.outline = "";
+//     el.style.border = "";
+//   });
+// });
+
+//! 🔥 Задача 11. Кнопка “Вгору” (scroll to top)
+// 	1.	Коли сторінка прокручена більш ніж на 300px → показати кнопку
+// 	2.	При натисканні → прокрутити сторінку догори (window.scrollTo з behavior smooth)
+
+// const btnEl = document.querySelector("#topBtn");
+
+// window.addEventListener("scroll", () => {
+//   if (window.scrollY > 300) {
+//     btnEl.style.display = "block";
+//   } else {
+//     btnEl.style.display = "none";
+//   }
+// });
+
+// btnEl.addEventListener("click", () => {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   });
+// });
+
+//! 🔥 Задача 14. Калькулятор: автоматичне оновлення суми
+// При зміні (input) будь-якого інпута:
+// 	•	вирахувати A + B
+// 	•	показати результат у span
+
+// const item1 = document.querySelector("#a");
+// const item2 = document.querySelector("#b");
+
+// const inputEl = document.querySelectorAll("input");
+
+// const item3 = document.querySelector("#result");
+
+// inputEl.forEach((el) => {
+//   el.addEventListener("input", (event) => {
+//     let sum = Number(item1.value) + Number(item2.value);
+
+//     item3.textContent = sum;
+//   });
+// });
+
+//! 🔥 Задача 15. Перевірка пароля в реальному часі
+// • Якщо менше 6 символів → текст червоний
+// • Якщо 6+ → зелений та написати: "Добре!"
+
+// const item1 = document.querySelector("#pass");
+// const item2 = document.querySelector("#rule");
+
+// item1.addEventListener("input", (event) => {
+//   if (event.target.value.length > 6) {
+//     item2.style.color = "green";
+//     item2.textContent = "Добре!";
+//   } else {
+//     item2.style.color = "red";
+//   }
+// });
+
+//! 🟢 1. Розпарсити JSON і отримати значення
+
+// const jsonEl = '{ "name": "Tom", "age": 25, "city": "Kyiv" }';
+
+// const toJS = JSON.parse(jsonEl);
+// console.log("🚀 ~ toJS:", toJS);
+
+// console.log(toJS.name);
+// console.log(toJS.age);
+// console.log(toJS.city);
+
+//! 🟢 2. Додати нове поле у JSON-об’єкт
+// Завдання: додай поле "isAdmin": true, а потім перетвори назад у JSON-рядок.
+
+// const user = { name: "Anna", age: 30 };
+// user.isAdmin = true;
+
+// const toJSON = JSON.stringify(user, null, 2);
+// console.log("🚀 ~ toJSON:", toJSON);
+
+//! 🟢 3. Масив об’єктів → JSON
+// Завдання: додай новий товар (назву й ціну), і поверни оновлений JSON.
+
+// const products = [
+//   { title: "Phone", price: 500 },
+//   { title: "Laptop", price: 1500 },
+// ];
+
+// products.push({ title: "Tablet", price: 2000 });
+// console.log("🚀 ~ products:", products);
+
+// const toJSON = JSON.stringify(products, null, 4);
+// console.log("🚀 ~ toJSON:", toJSON);
+
+//! 🟡 4. Фільтрація JSON-масиву
+// Завдання: залишити тільки товари з ціною менше 50.
+
+// const item1 = `[
+//   { "name": "Milk", "price": 30 },
+//   { "name": "Bread", "price": 20 },
+//   { "name": "Meat", "price": 150 }
+// ]`;
+
+// const toJS = JSON.parse(item1);
+// console.log("🚀 ~ toJS:", toJS);
+
+// const filtracia = toJS.filter((el) => {
+//   if (el.price < 50) {
+//     console.log(el);
+//   } else {
+//     console.log("Є ще товари але дорожчі за 50");
+//   }
+// });
+
+//! 🟡 5. Порахувати суму всіх цін у JSON
+// Є масив товарів у JSON (як вище).
+// Завдання: порахуй загальну суму всіх цін.
+
+// const sum = toJS.reduce((accum, el) => {
+//   return accum + el.price;
+// }, 0);
+// console.log("🚀 ~ sum:", sum);
+
+//! 1️⃣ Сума чисел
+// Створи функцію, яка приймає два числа й повертає їхню суму.
+
+// function sum(a, b) {
+//   return a + b;
+// }
+// console.log(sum(10, 20));
+
+//! 2️⃣ Перевірка парності
+// Напиши функцію, яка повертає "even" або "odd" залежно від числа.
+
+// function result(num) {
+//   if (num % 2 === 0) {
+//     return `even`;
+//   } else {
+//     return `odd`;
+//   }
+// }
+// console.log(result(6));
+
+//! 3️⃣ Пошук найбільшого числа
+// Є масив чисел.Поверни найбільше.
+// const arr = [1, 5, 8, 3, 20];
+
+// const result = arr.reduce((accum, el) => {
+//   if (accum < el) {
+//     return (accum = el);
+//   }
+//   return accum;
+// }, 0);
+// console.log("🚀 ~ result:", result);
+
+// const max = Math.max(...arr);
+// console.log("🚀 ~ max:", max);
+
+//! 4️⃣ Реверс рядка
+// Приймаєш рядок — повертаєш його задом наперед.
+
+const word = ["Dima"];
+
+const item1 = word.join("");
+console.log("🚀 ~ item1:", item1);
+
+const first = item1.slice(0, 1).toLowerCase();
+console.log("🚀 ~ first:", first);
+
+const last = item1.slice(3).toUpperCase();
+console.log("🚀 ~ last:", last);
+
+// !5️⃣ Фільтрація масиву
+
+// З масиву поверни лише числа більші за 10.
