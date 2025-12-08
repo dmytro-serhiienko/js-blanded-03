@@ -3093,20 +3093,75 @@ let contactList = JSON.parse(localStorage.getItem("storage")) || [];
 // const max = Math.max(...arr);
 // console.log("🚀 ~ max:", max);
 
-//! 4️⃣ Реверс рядка
-// Приймаєш рядок — повертаєш його задом наперед.
-
-const word = ["Dima"];
-
-const item1 = word.join("");
-console.log("🚀 ~ item1:", item1);
-
-const first = item1.slice(0, 1).toLowerCase();
-console.log("🚀 ~ first:", first);
-
-const last = item1.slice(3).toUpperCase();
-console.log("🚀 ~ last:", last);
-
 // !5️⃣ Фільтрація масиву
-
 // З масиву поверни лише числа більші за 10.
+// const numbers = [1, 23, 9, 8, 73, 4, 234];
+
+// const checker = numbers.filter((el) => el > 10);
+// console.table("🚀 ~ checker:", checker);
+
+//! 7️⃣ Унікальні елементи
+// Поверни масив без дублікатів.
+// const arr = [1, 2, 3, 3, 2, 5];
+
+// const norm = arr.reduce((accum, num) => {
+//   if (!accum.includes(num)) {
+//     accum.push(num);
+//   }
+//   return accum;
+// }, []);
+// console.log("🚀 ~ norm:", norm);
+
+//! 8️⃣ Об’єднання двох об’єктів
+// Створи функцію, що об’єднує два об’єкти в один.
+
+// function foo(obj1, obj2) {
+//   return { ...obj1, ...obj2 };
+// }
+
+// console.log(foo({ name: "Dima" }));
+// console.log(foo({ age: 33 }));
+
+//! 9️⃣ Задача на JSON
+// Є рядок:
+
+// const data = `{"name":"Dmytro","age":22}`;
+// const toJS = JSON.parse(data);
+// toJS.sex = "male";
+// console.log("🚀 ~ toJS:", toJS);
+// const toJSN = JSON.stringify(toJS, null, 2);
+// console.log("🚀 ~ toJSN:", toJSN);
+
+// 	•	розпарси JSON
+// 	•	додай нову властивість
+// 	•	поверни назад у JSON-рядок
+
+//! 🔟 Функція, що рахує суму цін
+// Є масив продуктів:
+// const goods = [
+//   { title: "Phone", price: 500 },
+//   { title: "Laptop", price: 1500 },
+// ];
+// // Поверни загальну суму цін.
+
+// const sum = goods.reduce((accu, el) => {
+//   return accu + el.price;
+// }, 0);
+// console.log("🚀 ~ sum:", sum);
+
+// GROK
+// Базовий рівень (основи синтаксису, змінні, умови, цикли)
+
+//! Привітання — Запитай у користувача ім’я через prompt() і виведи «Привіт, [ім’я]!»
+// const ask = prompt(`Your name?`);
+// console.log(ask);
+
+//! Парність числа — Користувач вводить число, ти кажеш, парне воно чи ні.
+// function checker(num) {
+//   if (num % 2 === 0) {
+//     return `even`;
+//   } else {
+//     return `odd`;
+//   }
+// }
+// console.log(checker(2));
