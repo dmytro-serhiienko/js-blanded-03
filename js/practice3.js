@@ -3165,3 +3165,375 @@ let contactList = JSON.parse(localStorage.getItem("storage")) || [];
 //   }
 // }
 // console.log(checker(2));
+
+//! Задача: витягнути name та country у змінні через деструктуризацію.
+
+// const user = {
+//   name: "Dmytro",
+//   age: 22,
+//   country: "UA",
+// };
+
+// const { name, country } = user;
+// console.log(name);
+// console.log(country);
+
+// !Завдання 2: Деструктуризація вкладеного об’єкта
+// const product = {
+//   title: "Phone",
+//   price: 300,
+//   details: {
+//     color: "black",
+//     memory: "128GB",
+//   },
+// };
+// Задача: деструктуризувати color і memory у окремі змінні.
+
+// const {
+//   details: { color, memory },
+// } = product;
+
+// console.log(color);
+// console.log(memory);
+
+// ! Завдання 3: Деструктуризація масиву
+// Задача: взяти перший, третій та четвертий елемент окремими змінними.
+
+// const numbers = [10, 20, 30, 40];
+// const [first, , ...rest] = numbers;
+// console.log(first);
+// console.table(rest);
+
+// !🟥 Завдання 4: Значення за замовчуванням
+// Задача: деструктуризувати name та age, причому age має мати дефолтне значення 18.
+
+// const user = {
+//   name: "Anna",
+// };
+
+// const { name, age = 18 } = user;
+
+// console.log(name);
+// console.log(age);
+
+// !🟪 Завдання 5: Переіменування змінних
+// Задача: деструктуризувати model у змінну carModel.
+
+// const car = {
+//   model: "BMW",
+//   year: 2020,
+// };
+// const carModel = [];
+// function foo({ model }) {
+//   return carModel.push(model);
+// }
+// console.log(foo(car));
+// console.log(carModel);
+
+//! 🟨 Завдання 6: Деструктуризація параметрів функції
+// Задача: всередині функції деструктуризувати name і age прямо в параметрах.
+
+// const user = { name: "Tom", age: 33 };
+
+// function printUser({ name, age }) {
+//   return `Name: ${name}, age: ${age}`;
+// }
+
+// console.log(printUser(user));
+
+// !🟫 Завдання 7: Пропуск елементів масиву
+// Задача: отримати лише другий та четвертий елемент.
+
+// const coords = [100, 200, 300, 400];
+
+// const [, second, , fouth] = coords;
+
+// console.log(second);
+// console.log(fouth);
+
+// !🔵 Завдання 8: Деструктуризація + rest
+// Задача: отримати перший елемент у змінну first, а решту в масив others.
+
+// const items = ["a", "b", "c", "d", "e"];
+
+// const [first, ...rest] = items;
+// console.log(first);
+// console.log(rest);
+
+// !
+// const normalaizer = items.toReversed().join("");
+// console.log("🚀 ~ normalaizer:", normalaizer);
+
+// ! Асинхрон
+// console.log("First");
+
+// setTimeout(() => {
+//   console.log("Second");
+// }, 2000);
+
+// console.log("Third");
+
+// ! SETTIMEOUT
+// const btnEl = document.querySelector("#js-my-button");
+// const spanEl = document.querySelector("#js-my-span");
+
+// const btnCancelEl = document.querySelector("#js-my-button-cancel");
+
+// btnEl.addEventListener("click", () => {
+//   set = setTimeout(() => {
+//     spanEl.textContent = `Повідомлення з затримкою`;
+//     spanEl.style.color = "green";
+//     spanEl.style.marginLeft = 40 + "px";
+//   }, 2000);
+// });
+
+// btnCancelEl.addEventListener("click", () => {
+//   can = clearTimeout(set);
+// });
+
+//! Promise
+
+// const isSuccess = true;
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (isSuccess) {
+//       resolve("Success! Value passed to resolve function");
+//     } else {
+//       reject("Error! Error passed to reject function");
+//     }
+//   }, 2000);
+// });
+
+// console.log(promise); // Об'єкт промісу
+
+// ! ✅ Задача 1: setTimeout
+// Завдання:
+// Виведи в консоль "Hello after 2 seconds" через 2 секунди.
+
+// const timeOut = setTimeout(() => {
+//   console.log("Hello after 2 seconds");
+// }, 2000);
+
+//! ✅ Задача 2: setInterval + clearInterval
+
+// Завдання:
+// Створи таймер, який кожну секунду виводить "tick".
+// Після 5 разів зупини його.
+
+// let count = 1;
+
+// const timer = setInterval(() => {
+//   console.log("tick");
+//   console.log(count++);
+
+//   if (count === 6) {
+//     clearInterval(timer);
+//   }
+// }, 1000);
+
+//! ✅ Задача 3: Promise basic
+
+// Завдання:
+// Створи Promise, який через 2 секунди виконується (resolve) зі значенням "done" і виведи результат.
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("done");
+//   }, 2000);
+// }).then((result) => {
+//   console.log(result);
+// });
+
+//! Створи Promise, який через 3 секунди відхиляється (reject) зі значенням "timeout".
+// Виведи помилку через .catch().
+
+// const promis = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve("All good");
+//     reject("timeout");
+//   }, 3000);
+// })
+//   //   .then((result) => {
+//   //     console.log(result);
+//   //   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+//! Створи Promise, який:
+// з ймовірністю 70% через 1 секунду resolve("успіх")
+// з ймовірністю 30% через 1 секунду reject("пощастило")
+// (підказка: Math.random())
+
+// const promise = new Promise((resolve, reject) => {
+//   if (Math.random() >= 0.19) {
+//     setTimeout(() => {
+//       resolve("успіх");
+//     }, 1000);
+//   } else {
+//     setTimeout(() => {
+//       reject("пощастило");
+//     }, 1500);
+//   }
+// })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log("код виконано");
+//   });
+
+//! Зроби ланцюжок з 3-х Promise:
+// перший через 1 сек resolve("крок 1")
+// другий через 1.5 сек resolve("крок 2")
+// третій через 0.5 сек resolve("крок 3")
+// Виведи їх по черзі через .then().then().then()
+
+// const prmise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("крок 1");
+//   }, 1000);
+// })
+//   .then((result1) => {
+//     console.log(result1);
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         resolve("крок 2");
+//       }, 1500);
+//     });
+//   })
+//   .then((result2) => {
+//     console.log(result2);
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         resolve("крок 3");
+//       }, 500);
+//     });
+//   })
+//   .then((result3) => {
+//     console.log(result3);
+//   });
+
+//! ✅ Задача 1: Простий Promise
+
+// Створи Promise, який через 1 секунду викликає
+// resolve("Success")
+// і виведи результат через .then.
+
+// const pro = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Success");
+//   }, 1000);
+// }).then((result) => {
+//   console.log(result);
+// });
+
+//! ✅ Задача 2: Promise з помилкою
+
+// Створи Promise, який через 1.5 секунди викличе
+// reject("Something went wrong").
+// Оброби помилку через .catch.
+
+// const pro = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     reject("Something went wrong");
+//   }, 1500);
+// })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log("Код завершено");
+//   });
+
+//! ✅ Задача 3: Умовний resolve/reject
+// Створи функцію:
+// Яка повертає Promise:
+// 	•	якщо num > 10, тоді resolve(“OK”)
+// 	•	інакше reject(“Too small”)
+
+// Використай .then і .catch.
+
+// function checkNumber(num) {
+//   const pro = new Promise((resolve, reject) => {
+//     if (num > 10) {
+//       resolve("OK");
+//     } else {
+//       reject("Too Small");
+//     }
+//   })
+//     .then((result) => {
+//       console.log(result);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     })
+//     .finally(() => {
+//       console.log("Code is done");
+//     });
+// }
+
+// checkNumber(5);
+// checkNumber(11);
+// checkNumber(7);
+
+//! ✅ Задача 4: Ланцюжок промісів (then chaining)
+// Створи Promise, який через 1 сек повертає число 5.
+// Потім у .then:
+// 	1.	помнож число на 2
+// 	2.	у наступному .then додай 10
+// 	3.	у третьому .then виведи фінальний результат
+// Очікувано: 20
+
+// const pro = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(5);
+//   }, 1000);
+// })
+//   .then((result) => {
+//     return result * 2;
+//   })
+//   .then((result) => {
+//     return result + 10;
+//   })
+//   .then((result) => {
+//     console.log(result);
+//   });
+
+//! ✅ Задача 1: Ланцюжок з помилкою
+// Створи Promise, який через 1 сек повертає число 10.
+
+// Побудуй ланцюжок:
+// 	1.	перший .then → поділи число на 2
+// 	2.	другий .then → помнож на 3
+// 	3.	третій .then → якщо результат > 10 → reject("Too big"), інакше resolve(result)
+// 	4.	.catch має зловити помилку
+// 	5.	.finally має вивести "Done"
+
+const pro = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(10);
+  }, 1000);
+})
+  .then((result) => {
+    return result / 2;
+  })
+  .then((result) => {
+    return result * 3;
+  })
+  .then((result) => {
+    return new Promise((resolve, reject) => {
+      if (result > 10) {
+        reject("Too big");
+      } else {
+        resolve(result);
+      }
+    });
+  })
+  .catch((error) => {
+    console.log("Error:", error);
+  });
