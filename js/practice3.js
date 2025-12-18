@@ -1,5 +1,7 @@
 // ! Делегування подій простий список
 
+// import { calculateDiscount } from "./utils";
+
 // const { createElement } = require("react");
 
 // const { createElement } = require("react");
@@ -4307,13 +4309,98 @@ let contactList = JSON.parse(localStorage.getItem("storage")) || [];
 
 //! Обчислення через reduce (Medium)
 //! Потрібно порахувати загальну суму замовлення, враховуючи кількість кожного товару.
-const cart = [
-  { title: "Item 1", price: 10, quantity: 2 },
-  { title: "Item 2", price: 50, quantity: 1 },
-  { title: "Item 3", price: 20, quantity: 4 },
-];
+// const cart = [
+//   { title: "Item 1", price: 10, quantity: 2 },
+//   { title: "Item 2", price: 50, quantity: 1 },
+//   { title: "Item 3", price: 20, quantity: 4 },
+// ];
 
-const sum = cart.reduce((accum, el) => {
-  return accum + el.price * el.quantity;
-}, 0);
-console.log("🚀 ~ sum:", sum);
+// const sum = cart.reduce((accum, el) => {
+//   return accum + el.price * el.quantity;
+// }, 0);
+// console.log("🚀 ~ sum:", sum);
+
+//! Фільтр списку (input → список)
+// Умова:
+// При введенні тексту в інпут показувати тільки ті елементи списку, які містять введений текст (без урахування регістру).
+
+// const items = {
+//   inputSearch: document.querySelector("#search"),
+//   listEl: document.querySelectorAll("#list > *"),
+// };
+
+// items.inputSearch.addEventListener("input", (event) => {
+//   const value = event.target.value.trim().toLowerCase();
+
+//   items.listEl.forEach((el) => {
+//     const text = el.textContent.toLowerCase();
+
+//     if (text.includes(value)) {
+//       el.style.display = "block";
+//     } else {
+//       el.style.display = "none";
+//     }
+//   });
+// });
+
+//! Лічильник кліків
+
+// Умова:
+// Кнопка збільшує число на 1 при кожному кліку.
+// Додай кнопку Reset, яка обнуляє лічильник.
+
+// const items = {
+//   countText: document.querySelector("#count"),
+//   buttonPlus: document.querySelector("#inc"),
+//   buttonReset: document.querySelector("#reset"),
+// };
+
+// let count = 0;
+
+// items.buttonPlus.addEventListener("click", () => {
+//   count++;
+//   items.countText.textContent = count;
+// });
+
+// items.buttonReset.addEventListener("click", () => {
+//   count = 0;
+
+//   items.countText.textContent = 0;
+// });
+
+//! Завдання: "Магазин гаджетів"
+// Тобі потрібно створити три файли та налаштувати зв'язок між ними за допомогою Named Export та Default Export.
+
+//! 1. Файл utils.js (Допоміжні функції)
+// У цьому файлі ми будемо використовувати Named Export (іменований експорт), тому що функцій може бути багато.
+// Створи функцію calculateDiscount(price, percent), яка повертає ціну зі знижкою.
+// Створи константу CURRENCY, яка дорівнює рядку '$'.
+// Експортуй їх обидва окремо.
+
+//! 2. Файл Product.js (Основний компонент)
+// У цьому файлі ми використаємо Default Export (експорт за замовчуванням), оскільки цей файл відповідає за один конкретний об'єкт.
+// Створи клас або функцію-конструктор Product, яка приймає name та price.
+// Експортуй цей клас як дефолтний.
+
+//! 3. Файл main.js (Точка входу)
+// Тут тобі потрібно зібрати все докупи:
+// Імпортуй calculateDiscount та CURRENCY з файлу utils.js.
+// Імпортуй Product з файлу Product.js (спробуй дати йому іншу назву при імпорті, наприклад Gadget).
+
+//! Логіка:
+// Створи екземпляр продукту (наприклад, iPhone за 1000).
+// Вирахуй знижку 10% за допомогою імпортованої функції.
+// Виведи в консоль повідомлення: "Товар: iPhone, Ціна зі знижкою: 900 $", використовуючи імпортовану константу валюти.
+
+// import { calculateDiscount, CURRENCY } from "./utils.js";
+// import { Product } from "./products.js";
+
+// const productItem = new Product("Iphone", 1000);
+// const { name, price } = productItem;
+// let priceDisc = calculateDiscount(price, 10);
+
+// console.log(
+//   `Товар: iPhone, оригінальна ціна ${price}${CURRENCY} \nЦіна зі знижкою: ${priceDisc}${CURRENCY}`
+// );
+
+// console.log(productItem, calculateDiscount);
