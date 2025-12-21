@@ -4404,3 +4404,494 @@ let contactList = JSON.parse(localStorage.getItem("storage")) || [];
 // );
 
 // console.log(productItem, calculateDiscount);
+
+//! 1️⃣ Очистка рядка
+
+// Напиши функцію, яка:
+// 	•	приймає рядок
+// 	•	прибирає пробіли з початку і кінця
+// 	•	робить всі літери малими
+
+// function cleanString(text) {
+//   return text.trim().toLowerCase();
+// }
+// console.log(cleanString("  HeLLo WoRLD  "));
+
+//! 2️⃣ Перевірка парного числа
+
+// function isEven(numbers) {
+//   if (numbers % 2 === 0) {
+//     console.log("even");
+//   } else {
+//     console.log("odd");
+//   }
+// }
+
+// isEven(4); // true
+// isEven(7); // false
+
+//! SUMARY
+// const sum = [1, 2, 3, 4];
+
+// const sumary = sum.reduce((acc, num) => {
+//   return acc + num;
+// },0 );
+// console.log("🚀 ~ sumary:", sumary);
+
+//! 6️⃣ Порахувати кількість слів
+
+// function countWords(word) {
+//   console.log(word.split(" ").length);
+// }
+
+// countWords("JS is awesome"); // 3
+
+//! 7️⃣ Перевернути рядок
+
+// const text = "hello";
+
+// const text1 = text.split("").toReversed().join("");
+// console.log("🚀 ~ text1:", text1);
+
+//! 8️⃣ Фільтр чисел
+
+// function filterPositive(num) {
+//   num.filter((el) => {
+//     if (el > 0) {
+//       console.log(el);
+//     } else {
+//       return el;
+//     }
+//   });
+// }
+
+// filterPositive([-1, 3, -5, 7, 0]); // [3, 7]
+
+//! 🟠 Рівень 3 — обʼєкти
+// 9️⃣ Підрахунок середнього балу
+
+// const grades = {
+//   math: 90,
+//   english: 80,
+//   biology: 70,
+// };
+
+// const key = Object.values(grades);
+
+// const result =
+//   key.reduce((acc, el) => {
+//     return acc + el;
+//   }, 0) / key.length;
+// console.log("🚀 ~ result:", result);
+
+//! 🔟 Перетворити обʼєкт у масив
+
+// function toArray(el) {
+//   console.log(Object.entries(el));
+// }
+
+// toArray({ a: 1, b: 2 });
+// // [["a", 1], ["b", 2]]
+
+// 1️⃣1️⃣ FizzBuzz (але трохи складніше)
+
+//! Виведи числа від 1 до 50:
+// 	•	кратні 3 → "Fizz"
+// 	•	кратні 5 → "Buzz"
+// 	•	кратні 3 і 5 → "FizzBuzz"
+
+// for (let i = 0; i < 50; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log("FizzBuzz");
+//   } else if (i % 3 === 0) {
+//     console.log("Fizz");
+//   } else if (i % 5 === 0) {
+//     console.log("Buzz");
+//   }
+// }
+
+//! 1️⃣2️⃣ Паліндром
+
+// function isPalindrome(word) {
+//   const first = word.split("").reverse().join("");
+
+//   if (word === first) {
+//     console.log("true");
+//   } else {
+//     console.log("false");
+//   }
+// }
+
+// isPalindrome("level"); // true
+// isPalindrome("hello"); // false
+
+// ! 🟢 Рівень 1 — основи Promise
+
+// 1️⃣ Створення Promise
+
+// Створи функцію wait(ms), яка:
+// 	•	повертає Promise
+// 	•	резолвиться через ms мс
+// 	•	нічого не повертає
+
+// function wait(ms) {
+//   return new Promise((resolve) => {
+//     resolve();
+//   });
+// }
+
+// wait(1000).then(() => console.log("done"));
+
+//! Умови:
+// 	•	якщо число > 0 → resolve(“ok”)
+// 	•	інакше → reject(“error”)
+
+// function checkNumber(num) {
+//   return new Promise((resolve, reject) => {
+//     if (resolve) {
+//       resolve("OK");
+//     } else {
+//       reject("error");
+//     }
+//   });
+// }
+
+// checkNumber(5).then(console.log).catch(console.error);
+
+// checkNumber(-1).catch(console.error);
+
+// !
+// new Promise((resolve) => {
+//   // через 1 сек виведи "done"
+
+//   setTimeout(() => {
+//     console.log("done 1s");
+//   }, 1000);
+// });
+
+// !
+
+// new Promise((resolve, reject) => {
+//   const num = -3;
+
+//   // якщо num > 0 → resolve("ok")
+//   // інакше → reject("error")
+
+//   if (num > 0) {
+//     resolve("ok");
+//   } else {
+//     reject("error");
+//   }
+// })
+//   .then(console.log)
+//   .catch(console.error);
+
+// !
+// new Promise((resolve) => {
+//   resolve(5);
+// })
+//   .then((result) => {
+//     return result * 2;
+//   })
+//   .then((result) => {
+//     return result + 3;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+// помножити на 2
+// додати 3
+// вивести результат (має бути 13)
+
+//! Створи Promise, який відразу резолвиться зі значенням 100
+// Помнож його на 3
+// Відніми 50
+// Виведи результат (має бути 250)
+
+// const prom = new Promise((resolve, reject) => {
+//   resolve(100);
+// })
+//   .then((result) => {
+//     return result * 3;
+//   })
+//   .then((result) => {
+//     return result - 50;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Створи Promise, який резолвиться через 1 секунду зі значенням "hello"
+// Перетвори його на верхній регістр (uppercase)
+// Додай до нього " world!"
+// Виведи результат (має бути "HELLO world!")
+
+// const prom = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("hello");
+//   }, 1000);
+// })
+//   .then((up) => {
+//     return up.toUpperCase();
+//   })
+//   .then((add) => {
+//     return `${add} world`;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Створи Promise, який резолвиться зі значенням 8
+// Піднеси його до квадрата (8² = 64)
+// Відніми від цього значення 4
+// Помнож результат на 2
+// Виведи результат (має бути 120)
+
+// const prom = new Promise((resolve, reject) => {
+//   resolve(8);
+// })
+//   .then((result) => {
+//     return result ** 2;
+//   })
+//   .then((res) => {
+//     return res - 4;
+//   })
+//   .then((res) => {
+//     return res * 2;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Створи Promise, який резолвиться зі значенням 10
+// Поділи його на 2
+// Відніми 3
+// Помнож на 4
+// Виведи результат
+
+// const prom = new Promise((resolve, reject) => {
+//   resolve(10);
+// })
+//   .then((res) => {
+//     return res / 2;
+//   })
+//   .then((res) => {
+//     return res - 3;
+//   })
+//   .then((res) => {
+//     return res * 4;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Створи Promise, який резолвиться через 2 секунди зі значенням "JS"
+// Перетвори його на "I love JS"
+// Додай до кінця " very much!"
+// Виведи результат (має бути "I love JS very much!")
+
+// const prom = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("JS");
+//   }, 2000);
+// })
+//   .then((mod) => {
+//     return `${mod} very much!`;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Створи Promise, який резолвиться зі значенням 20
+// Поділи на 4                    → має стати 5
+// Помнож на 10                   → має стати 50
+// Відніми 8                      → має стати 42
+// Додай 100                      → має стати 142
+// Виведи результат (142)
+
+// const prom = new Promise((resolve, reject) => {
+//   resolve("20");
+// })
+//   .then((res) => {
+//     return res / 4;
+//   })
+//   .then((res) => {
+//     return res * 10;
+//   })
+//   .then((res) => {
+//     return res - 8;
+//   })
+//   .then((res) => {
+//     return res + 100;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Створи Promise, який резолвиться зі значенням "java"
+// Додай до рядка "script"         → "javascript"
+// Перетвори на верхній регістр    → "JAVASCRIPT"
+// Додай на початок "I love "      → "I love JAVASCRIPT"
+// Додай в кінець "!!!"            → "I love JAVASCRIPT!!!"
+// Виведи результат
+
+// const prom = new Promise((resolve, reject) => {
+//   resolve("javascript");
+// })
+//   .then((res) => {
+//     return res.toUpperCase();
+//   })
+//   .then((res) => {
+//     return `I Love ${res}`;
+//   })
+//   .then((res) => {
+//     return `${res}!!!`;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Створи Promise, який резолвиться ЧЕРЕЗ 1.5 секунди зі значенням 7
+// Помнож на 3                    → 21
+// Додай 9                        → 30
+// Поділи на 2                    → 15
+// Виведи результат (15)
+// (Підказка: тобі знадобиться setTimeout у конструкторі Promise)
+
+// const prom = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(7);
+//   }, 1500);
+// })
+//   .then((res) => {
+//     return res * 3;
+//   })
+//   .then((res) => {
+//     return res + 9;
+//   })
+//   .then((res) => {
+//     return res / 2;
+//   })
+//   .then((show) => {
+//     console.log(show);
+//   });
+
+//! Завдання 1 (просте)
+// Напиши асинхронну функцію getNumber(), яка:
+
+// Повертає Promise, що резолвиться зі значенням 42 через 1 секунду.
+// У іншій async-функції виклич цю функцію в try.
+// У catch виведи в консоль "Помилки не було, але catch спрацював для прикладу".
+// Виведи отримане число.
+
+// function getNumber() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(42);
+//     }, 1000);
+//   });
+// }
+
+// getNumber()
+//   .then((number) => {
+//     console.log("Отримано число:", number);
+//   })
+//   .catch((error) => {
+//     console.log("Помилки не було, але catch спрацював для прикладу");
+//   });
+
+//! Завдання 3
+// Напиши функцію getUserRole(userId), яка повертає Promise:
+
+// Якщо userId === 1 → resolve("admin")
+// Якщо userId === 2 → resolve("user")
+// В іншому випадку → reject("Користувача не знайдено")
+
+// Потім виклич її тричі:
+
+// з 1 (має вивести "Роль: admin")
+// з 2 (має вивести "Роль: user")
+// з 999 (має вивести помилку через .catch())
+
+// function getUserRole(userId) {
+//   return new Promise((resolve, reject) => {
+//     if (userId === 1) {
+//       resolve("admin");
+//     } else if (userId === 2) {
+//       resolve("user");
+//     } else {
+//       reject("Користувача не знайдено");
+//     }
+//   });
+// }
+
+// getUserRole(1).then((res) => {
+//   console.log(`Твоя роль: ${res}`);
+// });
+
+// getUserRole(2).then((res) => {
+//   console.log(`Твоя роль: ${res}`);
+// });
+
+// getUserRole(4).catch((error) => {
+//   console.log(`${error}`);
+// });
+
+//! Завдання 4
+// Напиши функцію divideNumbers(a, b), яка повертає Promise:
+
+// Якщо b === 0 → reject("Ділення на нуль заборонено!")
+// Інакше → resolve(a / b)
+
+// function divideNumbers(a, b) {
+//   return new Promise((resolve, reject) => {
+//     if (b === 0) {
+//       reject("Ділення на нуль заборонено!");
+//     } else {
+//       resolve(a / b);
+//     }
+//   });
+// }
+
+// // Виклич її:
+// divideNumbers(10, 2).then((res) => {
+//   console.log(`Resutl: ${res}`);
+// });
+
+// divideNumbers(10, 0).catch((error) => {
+//   console.log(`Result: ${error}`);
+// });
+
+//! Завдання 5
+// Напиши функцію getWeather(city), яка повертає Promise:
+
+// Якщо city === "Kyiv" → resolve("Сонячно, +5°C")
+// Якщо city === "London" → resolve("Дощ, +10°C")
+// Інакше → reject("Погоду для цього міста не знайдено")
+
+// Виклич з "Kyiv" і з "Mars" — перевір обидва випадки.
+
+// function getWeather(city) {
+//   return new Promise((resolve, reject) => {
+//     if (city === "Kyiv") {
+//       resolve("Сонячно, +5°C");
+//     } else if (city === "London") {
+//       resolve("Дощ, +10°C");
+//     } else {
+//       reject("Погоду для цього міста не знайдено");
+//     }
+//   });
+// }
+
+// getWeather("Kyiv").then((res) => {
+//   console.log(res);
+// });
+
+// getWeather("London").then((res) => {
+//   console.log(res);
+// });
+
+// getWeather("Mars").catch((error) => {
+//   console.log(error);
+// });
