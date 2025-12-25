@@ -3,8 +3,8 @@ common * {
 }
 
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #ffffff;
+  color: #292929;
   font: 1.2em / 1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
@@ -166,4 +166,13 @@ button {
 
 .gallery__img:hover {
   transform: scale(1.02); /* Легке збільшення при наведенні */
+}
+/* СНІГ */
+#snow {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
 }

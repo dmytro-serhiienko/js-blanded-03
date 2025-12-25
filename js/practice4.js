@@ -1,6 +1,349 @@
+// !
+
+// 1️⃣ Масиви — базові методи
+
+//* 1.1
+// Є масив чисел.
+// ➡️ Залиши тільки парні числа.
+// Методи: filter
+
+// const numbers = [12, 3, 4, 98];
+
+// const filteredNumbers = numbers
+//   .filter((el) => el % 2 === 0)
+//   .toSorted((a, b) => a - b);
+// console.log("🚀 ~ filteredNumbers:", filteredNumbers);
+
+//* 1.2
+// Є масив рядків.
+// ➡️ Перетвори всі елементи в UPPERCASE.
+// Методи: map
+
+// const word = ["world, of, it, inductrys"];
+
+// const upper = word.map((el) => {
+//   return el.toUpperCase();
+// });
+// console.log("🚀 ~ upper:", upper);
+
+//* 1.3
+// Є масив чисел.
+// ➡️ Порахуй суму всіх елементів.
+// Методи: reducev
+
+// const numbers = [12, 3, 4, 98];
+
+// const res = numbers.reduce((acc, el) => {
+//   return acc + el;
+// }, 0);
+// console.log("🚀 ~ res:", res);
+
+// ⸻
+
+//* 2.1
+// Є масив об’єктів { id, name }.
+// ➡️ Знайди об’єкт з id === 3.
+// Методи: find
+
+// const users = [
+//   { id: 1, name: "Олександр" },
+//   { id: 2, name: "Марія" },
+//   { id: 3, name: "Дмитро" },
+//   { id: 4, name: "Анна" },
+// ];
+
+// const finder = users.find((el) => el.id === 3);
+// console.log("🚀 ~ finder:", finder);
+// console.log(finder.name);
+
+//* 2.2
+// Є масив чисел.
+// ➡️ Перевір, чи є хоча б одне число більше 100.
+// Методи: some
+
+// const numbers = [12, 3, 4, 98];
+
+// const finder = numbers.some((el) => el > 100);
+// console.log("🚀 ~ finder:", finder);
+
+//* 2.3
+// Є масив чисел.
+// ➡️ Перевір, чи всі числа додатні.
+// Методи: every
+
+// const numbers = [12, 3, 4, 98];
+
+// const finder = numbers.every((el) => el > 0);
+// console.log("🚀 ~ finder:", finder);
+
+// ⸻
+
+//* 3.1
+// Є рядок з пробілами на початку і в кінці.
+// ➡️ Прибери зайві пробіли.
+// Методи: trim
+
+// const word = " World is perfect ";
+
+// const normalaizer = word.trim();
+// console.log("🚀 ~ normalaizer:", normalaizer);
+
+//* 3.2
+// Є рядок "js, html, css"
+// ➡️ Зроби з нього масив без пробілів.
+// Методи: split, map
+
+// const word = "js, html, css";
+
+// const toArray = word.split(",");
+// console.log("🚀 ~ toArray:", toArray);
+
+//* 3.3
+// Є рядок.
+// ➡️ Порахуй кількість символів без пробілів.
+// Методи: replace, length
+
+// const word = " World is perfect ";
+
+// const sum = word.trim().length;
+// console.log("🚀 ~ sum:", sum);
+
+// ⸻
+
+// 4️⃣ Об’єкти
+
+//* 4.1
+// Є об’єкт.
+// ➡️ Отримай масив усіх ключів.
+// Методи: Object.keys
+
+// const user = {
+//   id: 1,
+//   name: "Ivan",
+//   age: 25,
+//   role: "admin",
+// };
+
+// const keys = Object.keys(user);
+// console.log("🚀 ~ keys:", keys);
+
+//* 4.2
+// Є об’єкт з числовими значеннями.
+// ➡️ Знайди суму всіх значень.
+// Методи: Object.values, reduce
+
+// const salary = {
+//   frontend: 2000,
+//   backend: 2500,
+//   design: 1500,
+// };
+
+// const values = Object.values(salary).reduce((acc, el) => {
+//   return acc + el;
+// }, 0);
+// console.log("🚀 ~ values:", values);
+
+// ⸻
+
+// 5️⃣ Комбіновані задачі (⚠️ цікаві)
+
+//* 5.1
+// Є масив рядків.
+// ➡️ Видали дублікати.
+// Методи: filter або Set
+
+// const fruits = ["apple", "banana", "apple", "orange", "banana"];
+
+// const fruitsMod = new Set(fruits);
+// console.log("🚀 ~ fruitsMod:", fruitsMod);
+
+//* 5.2
+// Є масив користувачів { name, age }.
+// ➡️ Залиши тільки користувачів старше 18
+// ➡️ Поверни масив імен
+// Методи: filter, map
+
+// const users = [
+//   { name: "Анна", age: 18 },
+//   { name: "Олексій", age: 25 },
+//   { name: "Віктор", age: 30 },
+//   { name: "Марія", age: 22 },
+// ];
+
+// const mod = users.filter((el) => el.age > 18);
+// console.log("🚀 ~ mod:", mod);
+
+//* 5.3
+// Є масив чисел.
+// ➡️ Відсортуй за зростанням
+// ➡️ Забери перші 3 найбільші числа
+// Методи: sort, slice
+
+// const numbers = [12, 3, 4, 98];
+
+// const mod = numbers.toSorted((a, b) => a - b);
+// console.log("🚀 ~ mod:", mod);
+
+// ⸻
+
+// 6️⃣ Рівень harder 🔥
+
+//* 6.1
+// Є масив рядків.
+// ➡️ Знайди найдовший рядок.
+// Методи: reduce
+
+// const fruits = ["apple", "banana", "orange", "kiwi"];
+
+// const mod = fruits.reduce((acc, el) => {
+//   if (el.length > acc.length) {
+//     return el;
+//   }
+//   return acc;
+// });
+// console.log("🚀 ~ mod:", mod);
+
+//* 6.2
+// Є рядок.
+// ➡️ Поверни об’єкт з кількістю кожної літери.
+// Методи: split, reduce
+
+// const fruits = "apple";
+
+// const res = fruits.split("").length;
+// console.log("🚀 ~ res:", res);
+
+//* 6.3
+// Є масив об’єктів { category, price }
+// ➡️ Порахуй загальну суму по кожній категорії
+// Результат: { food: 120, tech: 340 }
+
+// const products = [
+//   { category: "electronics", price: 500 },
+//   { category: "clothing", price: 50 },
+//   { category: "electronics", price: 1000 },
+//   { category: "clothing", price: 120 },
+//   { category: "food", price: 10 },
+// ];
+
+// const res = products.reduce((acc, el) => {
+//   if (!acc.includes(el.category)) {
+//     acc.push(el.category);
+//     return acc;
+//   } else {
+//     return acc;
+//   }
+// }, []);
+
+// 1️⃣ Об’єкти — база
+
+//* 1.1
+// Є об’єкт user з полями name, age, city.
+// ➡️ Витягни name і age в окремі змінні через деструктуризацію.
+
+// const user = {
+//   name: "Олексій",
+//   age: 28,
+//   city: "Київ",
+// };
+
+// const { name, age, city } = user;
+// console.log("🚀 ~ city:", city);
+// console.log("🚀 ~ age:", age);
+// console.log("🚀 ~ name:", name);
+
+// ⸻
+
+//* 1.2
+// Є об’єкт settings з полями theme, lang.
+// ➡️ Витягни theme, задай значення за замовчуванням для lang = "en".
+
+// const settings = {
+//   theme: "dark",
+//   lang: "en",
+// };
+
+// const { theme, lang } = settings;
+// console.log("🚀 ~ lang:", lang);
+// console.log("🚀 ~ theme:", theme);
+
+// ⸻
+
+//* 1.3
+// Є об’єкт з полем email.
+// ➡️ Витягни email і перейменуй змінну на userEmail.
+
+// const data = {
+//   email: "dima@gmail.com",
+// };
+
+// const { email: userEmail = "DIMA@gmail.com" } = data;
+// console.log("🚀 ~ userMail:", userEmail);
+
+//* ➡️ Завдання: Витягни одним рядком email з об'єкта profile і перейменуй його на userEmail.
+// const response = {
+//   id: 1,
+//   profile: {
+//     email: "test@mail.com",
+//     nickname: "Tiger",
+//   },
+// };
+
+// const {
+//   profile: { email: userEmail },
+// } = response;
+// console.log("🚀 ~ userEmail:", userEmail);
+
+//* ➡️ Завдання: Витягни ім'я першого користувача і запиши його в змінну firstName. Підказка: Можна комбінувати деструктуризацію масиву [] та об'єкта {}.
+// const users = [
+//   { id: 1, name: "Dima" },
+//   { id: 2, name: "Sasha" },
+// ];
+
+// const [{ id, name: firstName }] = users;
+// console.log("🚀 ~ firstName:", firstName);
+
+//* ➡️ Завдання: Створи новий об'єкт updatedUser, який буде копією user, але з новим містом "Lviv". Важливо: Не змінюй оригінальний об'єкт user.
+// const user = {
+//   name: "Dima",
+//   age: 25,
+//   city: "Kyiv",
+// };
+
+// const updatedUser = { ...user, city: "Lviv" };
+// console.log("🚀 ~ updatedUser:", updatedUser);
+
+//* ➡️ Завдання: Витягни brand і model в окремі змінні, а всі інші характеристики збережи в один загальний об'єкт під назвою others.
+// const car = {
+//   brand: "Tesla",
+//   model: "Model 3",
+//   year: 2022,
+//   color: "red",
+//   autopilot: true,
+// };
+
+// const { brand, model, ...rest } = car;
+// console.log("🚀 ~ brand:", brand);
+// console.log("🚀 ~ model:", model);
+// console.log("🚀 ~ rest:", rest);
+
+//* ➡️ Завдання: Створи новий масив updatedUsers, де користувач з id: 1 матиме статус "online", а всі інші користувачі залишаться без змін.
+// const users = [
+//   { id: 1, name: "Dima", status: "offline" },
+//   { id: 2, name: "Sasha", status: "offline" },
+// ];
+
+// const updatedUsers = users.map((el) => {
+//   if (el.id === 1) {
+//     return { ...el, status: "online" };
+//   }
+//   return el;
+// });
+
+// console.log("🚀 ~ updatedUsers:", updatedUsers);
+
 //! MODULE 11
 //! Напиши код за допомогою fetch(), який:
-
 // Робить GET-запит на https://dummyjson.com/products
 // Отримує JSON
 // У консолі виводить для кожного продукту:
@@ -707,13 +1050,13 @@
 // Опис фото (description або alt_description)
 // URL фото (urls.regular)
 
-axios
-  .get(BASE_URL, {
-    headers: { Authorization: `Client-ID ${API_KEY}` },
-  })
-  .then((response) => {
-    console.log(response.data);
-  });
+// axios
+//   .get(BASE_URL, {
+//     headers: { Authorization: `Client-ID ${API_KEY}` },
+//   })
+//   .then((response) => {
+//     console.log(response.data);
+//   });
 
 // Common Status Codes	Description
 // 200 - OK	Everything worked as expected
@@ -722,3 +1065,109 @@ axios
 // 403 - Forbidden	Missing permissions to perform request
 // 404 - Not Found	The requested resource doesn’t exist
 // 500, 503	Something went wrong on our end
+
+//* 1.	Є масив чисел.
+// Поверни суму тільки парних чисел.
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+// const parni = numbers
+//   .filter((el) => {
+//     return el % 2 === 0;
+//   })
+//   .reduce((acc, el) => {
+//     return acc + el;
+//   }, 0);
+// console.log("🚀 ~ parni:", parni);
+
+//* 2.	Є масив рядків.
+// Створи новий масив, де кожен рядок у верхньому регістрі, але коротші за 5 символів ігноруй.
+
+// const words = ["world", "of", "javascript"];
+
+// const res = words
+//   .filter((el) => {
+//     if (el.length >= 5) {
+//       return el;
+//     }
+//   })
+//   .map((el) => el.toUpperCase());
+// console.log("🚀 ~ res:", res);
+
+// *3.	Рядок: "JavaScript is awesome"
+// Поверни кількість слів, які мають більше 5 символів.
+
+// const words = ["world", "of", "javascript"];
+
+// const res = words.filter((el) => el.length >= 5).length;
+// console.log("🚀 ~ res:", res);
+
+// * 4.	Є масив чисел.
+// Перевір, чи всі числа додатні.
+
+// const num = [8, 7, 23, -4];
+
+// const sum = num.every((el) => el > 0);
+// console.log("🚀 ~ sum:", sum);
+
+//* 2️⃣ ЛАНЦЮЖКИ МЕТОДІВ (map / filter / reduce / sort)
+
+// const product = [
+//   { name: "Apple", price: 50, category: "fruit" },
+//   { name: "Carrot", price: 20, category: "vegetable" },
+//   { name: "Banana", price: 30, category: "fruit" },
+// ];
+
+// const sum = product.toSorted((a, b) => a.price - b.price);
+
+//* 6.	Є масив чисел.
+// ➡️ Залиш тільки унікальні,
+// піднеси кожне до квадрату,
+// та знайди загальну суму.
+
+// const num = [3, 4, 6];
+
+// const res = num
+//   .map((el) => {
+//     return el ** 2;
+//   })
+//   .reduce((acc, el) => {
+//     return acc + el;
+//   }, 0);
+// console.log("🚀 ~ res:", res);
+
+//* 7.	Є масив користувачів:
+// ➡️ Отримай рядок імен повнолітніх через кому
+
+// const user = [
+//   { name: "Anna", age: 17 },
+//   { name: "Ivan", age: 21 },
+//   { name: "Olga", age: 30 },
+// ];
+
+// const sum = user.filter((el) => {
+//   if (el.age > 18) {
+//     return el;
+//   }
+// });
+// console.log("🚀 ~ sum:", sum);
+
+//* ➡️ Дістань name і email через деструктуризацію.
+// const user = {
+//   id: 1,
+//   profile: {
+//     name: "Dmytro",
+//     contacts: {
+//       email: "test@mail.com",
+//     },
+//   },
+// };
+
+// const {
+//   profile: {
+//     name,
+//     contacts: { email },
+//   },
+// } = user;
+// console.log("🚀 ~ name:", name);
+// console.log("🚀 ~ email:", email);
