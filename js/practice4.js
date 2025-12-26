@@ -1234,45 +1234,45 @@
 // 	•	передай userId = 1
 // 	•	виведи titles у список
 
-const items = {
-  btnEl: document.querySelector("#posts"),
-  listEl: document.querySelector("#posts-list"),
-  goodEl: document.querySelector("#good"),
-  badEl: document.querySelector("#minus-status"),
-};
+// const items = {
+//   btnEl: document.querySelector("#posts"),
+//   listEl: document.querySelector("#posts-list"),
+//   goodEl: document.querySelector("#good"),
+//   badEl: document.querySelector("#minus-status"),
+// };
 
-const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
+// const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 
-items.btnEl.addEventListener("click", () => {
-  items.listEl.innerHTML = "";
-  items.goodEl.textContent = "Завантаження...";
+// items.btnEl.addEventListener("click", () => {
+//   items.listEl.innerHTML = "";
+//   items.goodEl.textContent = "Завантаження...";
 
-  axios
-    .get(BASE_URL, {
-      params: {
-        userId: 1,
-      },
-    })
-    .then((response) => {
-      response.data.forEach((el) => {
-        setTimeout(() => {
-          const newLi = document.createElement("li");
-          newLi.textContent = el.title;
-          items.listEl.append(newLi);
-          items.goodEl.textContent = `Все успішно виконано, всі пости опубліковані за id: ${el.id} ✅`;
-          items.goodEl.style.color = "green";
-          items.goodEl.style.backgroundColor = "yellow";
-        }, 1500);
-      });
-    })
-    .catch((error) => {
-      setTimeout(() => {
-        console.error(`Виникла помилка: ${error.message}`);
-        items.goodEl.textContent = "";
-        items.badEl.textContent = `Виникла помилка❗️: ${error.message}`;
-      }, 1500);
-    });
-});
+//   axios
+//     .get(BASE_URL, {
+//       params: {
+//         userId: 1,
+//       },
+//     })
+//     .then((response) => {
+//       response.data.forEach((el) => {
+//         setTimeout(() => {
+//           const newLi = document.createElement("li");
+//           newLi.textContent = el.title;
+//           items.listEl.append(newLi);
+//           items.goodEl.textContent = `Все успішно виконано, всі пости опубліковані за id: ${el.id} ✅`;
+//           items.goodEl.style.color = "green";
+//           items.goodEl.style.backgroundColor = "yellow";
+//         }, 1500);
+//       });
+//     })
+//     .catch((error) => {
+//       setTimeout(() => {
+//         console.error(`Виникла помилка: ${error.message}`);
+//         items.goodEl.textContent = "";
+//         items.badEl.textContent = `Виникла помилка❗️: ${error.message}`;
+//       }, 1500);
+//     });
+// });
 
 // ?
 // const numbers = [1, 2, 6, 12, 1, 12, 2];
@@ -1283,3 +1283,42 @@ items.btnEl.addEventListener("click", () => {
 // const words = ["hello", "hello", "apple", "apple"];
 // const newNorm = new Set(words);
 // console.log("🚀 ~ newNorm:", newNorm);
+
+//* 4️⃣ Loading state
+
+// <button id="btn">Load</button>
+// <p id="status"></p>
+
+// ➡️ При кліку:
+//     •	одразу показуй "Loading..."
+//     •	після відповіді — "Done"
+//     •	при помилці — "Error"
+
+const btnEl = document.querySelector("#btn");
+const statusEl = document.querySelector("#status");
+
+const BASE_URL = "https://jsonplaceholder.typicode.com/users";
+
+btnEl.addEventListener("click", () => {
+  statusEl.innerHTML = "";
+  statusEl.textContent = "Loading...";
+
+  axios
+    .get(BASE_URL)
+    .then((response) => {
+      setTimeout(() => {
+        statusEl.textContent = "Done ✅";
+
+        response.data.forEach((el) => {
+          console.log(el.name);
+        });
+      }, 1500);
+    })
+    .catch((error) => {
+      console.error(error.message);
+      statusEl.textContent = "Error ❗️";
+    })
+    .finally((fin) => {
+      console.log(fin);
+    });
+});
