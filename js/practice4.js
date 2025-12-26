@@ -1171,3 +1171,115 @@
 // } = user;
 // console.log("🚀 ~ name:", name);
 // console.log("🚀 ~ email:", email);
+
+//* 🟢 1. БАЗА AXIOS
+// 	1.	Зроби GET-запит на публічне API.
+// ➡️ Виведи response.data в консоль.
+// const BASE_URL = "https://jsonplaceholder.typicode.com/users";
+
+// axios.get(BASE_URL).then((response) => {
+//   response.data.forEach((el) => {
+//     console.log(el.name);
+//   });
+// });
+
+// 	2.	Зроби GET-запит з параметрами (params).
+// ➡️ Передай userId = 1.
+
+// const BASE_URL = "https://jsonplaceholder.typicode.com/users";
+
+// axios
+//   .get(BASE_URL, {
+//     params: {
+//       id: 10,
+//     },
+//   })
+//   .then((response) => {
+//     console.log(response.data);
+//   })
+//   .catch((error) => {
+//     console.error(`Зміст помилки: ${error.message}`);
+//   });
+
+//* ➡️ По кліку:
+//     •	зроби GET /users
+//     •	виведи імена користувачів у <li>
+
+// const btnEl = document.querySelector("#load");
+// const listEl = document.querySelector("#users");
+
+// const BASE_URL = "https://jsonplaceholder.typicode.com/users";
+
+// btnEl.addEventListener("click", () => {
+//   axios
+//     .get(BASE_URL)
+//     .then((response) => {
+//       listEl.innerHTML = ""; // Очищаємо список перед додаванням
+
+//       response.data.forEach((el) => {
+//         const newLi = document.createElement("li");
+//         newLi.textContent = el.name;
+//         listEl.append(newLi);
+//       });
+//     })
+//     .catch((error) => {
+//       console.error(error.message);
+//     });
+// });
+
+//* 2️⃣ GET з params
+
+// ➡️ По кліку:
+// 	•	зроби GET /posts
+// 	•	передай userId = 1
+// 	•	виведи titles у список
+
+const items = {
+  btnEl: document.querySelector("#posts"),
+  listEl: document.querySelector("#posts-list"),
+  goodEl: document.querySelector("#good"),
+  badEl: document.querySelector("#minus-status"),
+};
+
+const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
+
+items.btnEl.addEventListener("click", () => {
+  items.listEl.innerHTML = "";
+  items.goodEl.textContent = "Завантаження...";
+
+  axios
+    .get(BASE_URL, {
+      params: {
+        userId: 1,
+      },
+    })
+    .then((response) => {
+      response.data.forEach((el) => {
+        setTimeout(() => {
+          const newLi = document.createElement("li");
+          newLi.textContent = el.title;
+          items.listEl.append(newLi);
+          items.goodEl.textContent = `Все успішно виконано, всі пости опубліковані за id: ${el.id} ✅`;
+          items.goodEl.style.color = "green";
+          items.goodEl.style.backgroundColor = "yellow";
+        }, 1500);
+      });
+    })
+    .catch((error) => {
+      setTimeout(() => {
+        console.error(`Виникла помилка: ${error.message}`);
+        items.goodEl.textContent = "";
+        items.badEl.textContent = `Виникла помилка❗️: ${error.message}`;
+      }, 1500);
+    });
+});
+
+// ?
+// const numbers = [1, 2, 6, 12, 1, 12, 2];
+// const norm = new Set(numbers);
+// console.log("🚀 ~ norm:", norm);
+
+// ?
+// const words = ["hello", "hello", "apple", "apple"];
+// const newNorm = new Set(words);
+// console.log("🚀 ~ newNorm:", newNorm);
